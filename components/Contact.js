@@ -16,17 +16,17 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className={styles.socials}>
-                    <a href='https://twitter.com/olowoo_a'>
-                        <FaTwitter className={styles.social} style={{zIndex: 2, '--color': '#000'}} />
+                    <a target='_blank' href='https://twitter.com/olowoo_a'>
+                        <FaTwitter className={styles.social} style={{zIndex: 2, '--color': '#000', mixBlendMode: 'difference'}} />
                     </a>
-                    <a href='https://instagram.com/olowoo_a'>
-                        <FaInstagram className={styles.social} style={{zIndex: 2, '--color': '#000'}} />
+                    <a target='_blank' href='https://instagram.com/olowoo_a'>
+                        <FaInstagram className={styles.social} style={{zIndex: 2, '--color': '#000', mixBlendMode: 'difference'}} />
                     </a>
-                    <a href=''>
-                        <FaWhatsapp className={styles.social} style={{zIndex: 2, '--color': '#000'}} />
+                    <a target='_blank' href=''>
+                        <FaWhatsapp className={styles.social} style={{zIndex: 2, '--color': '#000', mixBlendMode: 'difference'}} />
                     </a>
-                    <a href='https://github.com/Olowodev'>
-                        <FaGithub className={styles.social} style={{zIndex: 2, '--color': '#000'}} />
+                    <a target='_blank' href='https://github.com/Olowodev'>
+                        <FaGithub className={styles.social} style={{zIndex: 2, '--color': '#000', mixBlendMode: 'difference'}} />
                     </a>
                 </div>
                 <div className={styles.credit}>

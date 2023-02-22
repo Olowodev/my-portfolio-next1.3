@@ -17,7 +17,7 @@
 .contactButtonContainer {
     display: flex;
     justify-content: center;
-    padding-top: 15vh;
+    padding-top: 12vh;
 }
 
 .contactButton {
@@ -57,7 +57,7 @@
 }
 
 .socials {
-    margin: 15vh 0;
+    margin: 12vh 0;
     display: flex;
     justify-content: center;
 }
@@ -69,7 +69,7 @@
 .socials a {
     padding: 16px;
     border-radius: 50%;
-    color: #000;
+    color: #fff;
     font-size: 24px;
     display: flex;
     border: 1px solid #fff;
@@ -96,11 +96,11 @@
 
 
 
-.socials a:hover .social {
+/* .socials a:hover .social {
     color: #fff;
-}
+} */
 
 .credit {
     padding: 0 7vw;
-    padding-bottom: 3vh;
+    padding-bottom: 2vh;
 } 

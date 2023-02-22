@@ -9,8 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@barba/core": "^2.9.7",
+    "@react-three/drei": "^9.40.0",
+    "@react-three/fiber": "^8.9.0",
+    "eslint": "8.26.0",
+    "eslint-config-next": "13.0.1",
+    "glsl-noise": "^0.0.0",
+    "glslify-loader": "^2.0.0",
+    "gsap": "^3.11.3",
+    "locomotive-scroll": "^4.1.4",
     "next": "13.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.6.0",
+    "react-transition-group": "^4.4.5",
+    "three": "^0.146.0"
+  },
+  "devDependencies": {
+    "babel-plugin-glsl": "^1.0.0",
+    "raw-loader": "^4.0.2"
   }
 }

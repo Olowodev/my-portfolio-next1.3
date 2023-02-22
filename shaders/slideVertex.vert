@@ -1,11 +1,13 @@
-#define PI 3.1415926535897932384626433832795
-
-varying vec2 vUv;
 precision mediump float;
+#define PI 3.1415926535897932384626433832795
+varying vec2 vUv;
 uniform float uTime;
+uniform float uVelo;
 varying float vWave;
 varying vec3 vPosition;
-uniform int uHover;
+varying float vVelo;
+uniform vec3 uPosition;
+uniform float uHover;
 #pragma glslify: snoise3 = require(glsl-noise/simplex/3d);
 
 void main() {
@@ -25,8 +27,8 @@ void main() {
     // gl_Position = projectionMatrix * newPosition;
     // } else {
         vec4 newPosition = modelViewMatrix * vec4(pos, 1.0);
-
-        newPosition.z += sin(newPosition.x * PI + 1.5 );
+        // newPosition.x += (sin(uv.y * PI) * uVelo) * 0.125; 
+        // newPosition.z += sin(newPosition.x * PI + 1.5 );
         gl_Position = projectionMatrix * newPosition;
     // }
     //gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
