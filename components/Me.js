@@ -5,6 +5,7 @@ import { Color, Texture, TextureLoader, Vector2 } from 'three';
 import fragment from "raw-loader!glslify-loader!../shaders/fragment.frag"
 import vertex from "raw-loader!glslify-loader!../shaders/vertex.vert"
 import { shaderMaterial } from '@react-three/drei';
+import Navbar from './navbar/Navbar';
 
 
 
@@ -31,6 +32,8 @@ const Wave = () => {
 }
 const Me = () => {
     return (
+        <>
+        <Navbar />
         <section id="me" className={styles.me}>
             <div className={styles.meMain}>
                 <div className={styles.meMainContainer}>
@@ -54,6 +57,7 @@ const Me = () => {
                 </Suspense>
             </Canvas>
         </section>
+        </>
     );
 }
 
