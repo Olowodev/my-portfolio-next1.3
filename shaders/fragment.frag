@@ -1,5 +1,5 @@
-varying vec2 vUv;
 precision mediump float;
+varying vec2 vUv;
 uniform vec3 uColor;
 uniform float uTime;
 uniform sampler2D uTexture;

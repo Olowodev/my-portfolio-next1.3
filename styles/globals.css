@@ -160,6 +160,7 @@ html, body {
   background-color: #000; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: calc(100vw / 1920 * 10);
 }
 
 a:hover {
@@ -188,3 +189,22 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
+.curtains-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+/* .BasicPlane {
+  width: 80%;
+  height: 80%;
+  
+}
+
+.BasicPlane img {
+  display: none;
+} */

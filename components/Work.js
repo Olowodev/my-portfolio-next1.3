@@ -84,6 +84,7 @@ const Picture = ({velo, cover, index, state, title}) => {
     const onHover = (value) => {
         ref.current.uHover = value
         setHovered(!hovered)
+        console.log(hovered)
     }
 
     const navigate = () => {
@@ -146,7 +147,7 @@ const Work = ({velo, state}) => {
             {/* <p className={styles.workName}>TRINAC</p> */}
             </div>
 
-            <Canvas style={{position: 'absolute', left: 0, top: 0, zIndex: 2}} camera={{fov: 8, position: [0, 0, 10]}} >
+            <Canvas style={{position: 'absolute', left: 0, top: 0, zIndex: 2, pointerEvents: 'all'}} camera={{fov: 8, position: [0, 0, 10]}} >
                 
                 <Suspense fallback={null}>
                     {workSlideShow.map((slide, index) => (
