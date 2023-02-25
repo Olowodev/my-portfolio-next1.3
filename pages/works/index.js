@@ -60,7 +60,14 @@ const Picture = ({ velo, cover, index, state, title }) => {
     const ref2 = useRef()
     const [hovered, setHovered] = useState(false)
     const router = useRouter()
-
+    const {gl} = useThree()
+    useEffect(() => {
+        // gl.domElement.addEventListener('webglcontextloss', ()=>{
+        //     console.log('testing')
+        //     gl.forceContextRestore()
+        // })
+        gl.forceContextRestore()
+    }, [gl])
 
     const onImageClick = () => {
 
@@ -126,14 +133,7 @@ const Picture = ({ velo, cover, index, state, title }) => {
 
 const Works = () => {
 
-    const {gl} = useThree()
-    useEffect(() => {
-        // gl.domElement.addEventListener('webglcontextloss', ()=>{
-        //     console.log('testing')
-        //     gl.forceContextRestore()
-        // })
-        gl.forceContextRestore()
-    }, [gl])
+    
 
     return (
         <div className={`${styles.works} works`}>
