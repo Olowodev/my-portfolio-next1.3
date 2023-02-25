@@ -1,5 +1,5 @@
 import styles from '../styles/homeStyles/Work.module.css'
-import {Canvas, extend, useFrame, useLoader} from "@react-three/fiber"
+import {Canvas, extend, useFrame, useLoader, useThree} from "@react-three/fiber"
 import { Color, Texture, TextureLoader, Vector3} from 'three';
 import * as THREE from 'three'
 import { Html, shaderMaterial } from '@react-three/drei';
@@ -138,6 +138,13 @@ gsap.from(textRef.current, {
 
 
 const Work = ({velo, state}) => {
+
+    const {gl} = useThree()
+    useEffect(() => {
+        gl.addEventListener('webglcontextloss', ()=>{
+            gl.forceContextRestore()
+        })
+    }, [gl])
     return (
         <section id="work" className={styles.work}>
             <div className={styles.workContainer}>
@@ -147,7 +154,7 @@ const Work = ({velo, state}) => {
             {/* <p className={styles.workName}>TRINAC</p> */}
             </div>
 
-            <Canvas style={{position: 'absolute', left: 0, top: 0, zIndex: 2, pointerEvents: 'all'}} camera={{fov: 8, position: [0, 0, 10]}} >
+            <Canvas  style={{position: 'absolute', left: 0, top: 0, zIndex: 2, pointerEvents: 'all'}} camera={{fov: 8, position: [0, 0, 10]}} >
                 
                 <Suspense fallback={null}>
                     {workSlideShow.map((slide, index) => (
