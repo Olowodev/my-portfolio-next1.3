@@ -6,6 +6,7 @@ import { Html, shaderMaterial } from '@react-three/drei';
 import { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import slideVertex from "raw-loader!glslify-loader!../shaders/slideVertex.vert"
 import slideFragment from "raw-loader!glslify-loader!../shaders/slideFragment.frag"
+import slideFragment2 from "raw-loader!glslify-loader!../shaders/fragment2.frag"
 import { workSlideShow } from '../data';
 import {useRouter} from 'next/router'
 import gsap from 'gsap';
@@ -14,7 +15,7 @@ import { Transition } from 'react-transition-group';
 const SlideShaderMaterial = shaderMaterial(
     {uVelo: 0, uTime: 0, uHover: 0, uColor: new Color(1, 0.2, 1), uTexture: new Texture(), uMouse: new Vector3(), uPosition: new Vector3(), uProgress: 0, uMeshScale: new THREE.Vector2(1,1), uMeshPosition: new THREE.Vector2(0, 0), uViewSize: new THREE.Vector2(1, 1) },
     slideVertex,
-    slideFragment
+    slideFragment2
 )
 
 extend({SlideShaderMaterial})
