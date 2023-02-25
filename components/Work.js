@@ -15,7 +15,7 @@ import { Transition } from 'react-transition-group';
 const SlideShaderMaterial = shaderMaterial(
     {uVelo: 0, uTime: 0, uHover: 0, uColor: new Color(1, 0.2, 1), uTexture: new Texture(), uMouse: new Vector3(), uPosition: new Vector3(), uProgress: 0, uMeshScale: new THREE.Vector2(1,1), uMeshPosition: new THREE.Vector2(0, 0), uViewSize: new THREE.Vector2(1, 1) },
     slideVertex,
-    slideFragment2
+    slideFragment
 )
 
 extend({SlideShaderMaterial})
@@ -60,10 +60,6 @@ const Picture = ({velo, cover, index, state, title}) => {
 
     const {gl} = useThree()
     useEffect(() => {
-        // gl.domElement.addEventListener('webglcontextloss', ()=>{
-        //     console.log('testing')
-        //     gl.forceContextRestore()
-        // })
         gl.forceContextRestore()
         return ()=> {
         gl.forceContextLoss()
@@ -133,7 +129,7 @@ const Picture = ({velo, cover, index, state, title}) => {
 // }
 
     
-   const [image] = useLoader(TextureLoader, ['test.webp'])
+   const [image] = useLoader(TextureLoader, [cover])
     return (
         <>
             <mesh onClick={() => navigate()} onPointerEnter={()=> onHover(1)} onPointerLeave={() => onHover(0)} onPointerMove={(e) => mouse(e)} ref={meshRef}>
