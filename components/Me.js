@@ -25,7 +25,7 @@ const Wave = () => {
     const [image] = useLoader(TextureLoader, ['test.webp'])
     return (
         <mesh>
-            <planeBufferGeometry args={[0.4, 0.4, 16, 16]} />
+            <planeGeometry args={[0.4, 0.4, 16, 16]} />
             <myShaderMaterial  ref={ref} uTexture={image}/>
         </mesh>
     )
