@@ -1,5 +1,5 @@
 import { Html, shaderMaterial } from "@react-three/drei";
-import { Canvas, extend, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, extend, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { useRouter } from "next/router";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
@@ -126,7 +126,15 @@ const Picture = ({ velo, cover, index, state, title }) => {
 
 const Works = () => {
 
-    
+    const {gl} = useThree()
+    useEffect(() => {
+        // gl.domElement.addEventListener('webglcontextloss', ()=>{
+        //     console.log('testing')
+        //     gl.forceContextRestore()
+        // })
+        gl.forceContextRestore()
+    }, [gl])
+
     return (
         <div className={`${styles.works} works`}>
             <Navbar />
