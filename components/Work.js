@@ -64,6 +64,10 @@ const Picture = ({velo, cover, index, state, title}) => {
         })
     }, [gl])
 
+    useEffect(()=> {
+        console.log(ref.current.uTexture)
+    }, [ref.current])
+
     // const getViewSize = () => {
     //     const fovInRadians = (camera.fov * Math.PI) / 180;
     //     const height = Math.abs(
@@ -116,11 +120,11 @@ const Picture = ({velo, cover, index, state, title}) => {
 
 })
 
-if (hovered) {
-gsap.from(textRef.current, {
-    y: 10
-})
-}
+// if (hovered) {
+// gsap.from(textRef.current, {
+//     y: 10
+// })
+// }
 
     
    const [image] = useLoader(TextureLoader, ['test.webp'])
