@@ -67,7 +67,7 @@ const Picture = ({ velo, cover, index, state, title }) => {
         //     gl.forceContextRestore()
         // })
         console.log(gl.getContext())
-        gl.getExtension('WEBGL_lose_context').forceContextRestore()
+        gl.forceContextRestore()
     }, [gl])
 
     const onImageClick = () => {
