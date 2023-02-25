@@ -211,14 +211,14 @@ const Works = () => {
                     {/* <div className={styles.box}>
 
                 </div> */}
-                    {/* <Canvas camera={{fov: 8, position: [0, 0, 10]}} style={{position: 'absolute', left: 0, top: 0}}>
+                    <Canvas camera={{fov: 8, position: [0, 0, 10]}} style={{position: 'absolute', left: 0, top: 0}}>
                 
                 <Suspense fallback={null}>
                 {workSlideShow.map((slide, index) => (
                         <Picture key={slide.id} index={index} {...slide} />
                     ))}
                 </Suspense>
-            </Canvas> */}
+            </Canvas>
                 </div>
             </div>
             );
