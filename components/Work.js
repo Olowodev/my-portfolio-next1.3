@@ -65,6 +65,9 @@ const Picture = ({velo, cover, index, state, title}) => {
         //     gl.forceContextRestore()
         // })
         gl.forceContextRestore()
+        return ()=> {
+        gl.forceContextLoss()
+        }
     }, [gl])
 
     useEffect(()=> {
