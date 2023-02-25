@@ -57,6 +57,13 @@ const Picture = ({velo, cover, index, state, title}) => {
     const [hovered, setHovered] = useState(false)
     const router = useRouter()
 
+    const {gl} = useThree()
+    useEffect(() => {
+        gl.addEventListener('webglcontextloss', ()=>{
+            gl.forceContextRestore()
+        })
+    }, [gl])
+
     // const getViewSize = () => {
     //     const fovInRadians = (camera.fov * Math.PI) / 180;
     //     const height = Math.abs(
@@ -139,12 +146,7 @@ gsap.from(textRef.current, {
 
 const Work = ({velo, state}) => {
 
-    const {gl} = useThree()
-    useEffect(() => {
-        gl.addEventListener('webglcontextloss', ()=>{
-            gl.forceContextRestore()
-        })
-    }, [gl])
+    
     return (
         <section id="work" className={styles.work}>
             <div className={styles.workContainer}>
