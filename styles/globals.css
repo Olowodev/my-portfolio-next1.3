@@ -161,6 +161,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: calc(100vw / 1920 * 10);
+
 }
 
 a:hover {
@@ -190,13 +191,13 @@ body {
   overflow-y: scroll;
 }
 
-.curtains-canvas {
+/* .works ~ .curtains-canvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-}
+} */
 
 
 /* .BasicPlane {

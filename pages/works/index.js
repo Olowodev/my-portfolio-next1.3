@@ -12,7 +12,7 @@ import { Color, Texture, TextureLoader, Vector3 } from "three";
 import { workSlideShow } from "../../data";
 import gsap from "gsap";
 import { Plane } from 'react-curtains'
-import { Curtains, useCurtains } from "react-curtains";
+import { Curtains, useCurtainsEvent } from "react-curtains";
 
 const SlideShaderMaterial = shaderMaterial(
     { uVelo: 0, uTime: 0, uHover: 0, uColor: new Color(1, 0.2, 1), uTexture: new Texture(), uMouse: new Vector3(), uPosition: new Vector3(), uProgress: 0, uMeshScale: new THREE.Vector2(1, 1), uMeshPosition: new THREE.Vector2(0, 0), uViewSize: new THREE.Vector2(1, 1) },
@@ -117,23 +117,22 @@ const Picture = ({ velo, cover, index, state, title }) => {
     )
 }
 
+// const images = [
+//     {
+//         id: 1,
+//         img: 'abstract1.webp',
+//     },
+// ]
+
 const Works = () => {
 
-    const curtains = useCurtains()
-
-    // useEffect(() => {
-    //     return {
-    //         curtains.dispose()
-    //     }
-    // }, [curtains])
-
+    
     return (
-        <Curtains>
-        <div>
+        <div className={`${styles.works} works`}>
             <Navbar />
             <div style={{ position: 'relative', height: '100vh' }}>
                 <div className={styles.marquee}>
-                    <div className={styles.marquee_inner} ariaHidden='true'>
+                    <div className={styles.marquee_inner} aria-hidden='true'>
                         <span>WORK</span>
                         <span>WORK</span>
                         <span>WORK</span>
@@ -146,49 +145,73 @@ const Works = () => {
                 {/* <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className="BasicPlane">
                         <img className="img" src="/abstract2.jpg" />
                     </Plane> */}
-                <div className={styles.gallery}>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                    <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
-                        <img className="img" src="/abstract2.jpg" />
-                    </Plane>
-                </div>
+                {/* <div className={styles.gallery}>
+                    <div className={styles.figureWrapper}>
+                        <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                            <img className="img" src="/abstract1.webp" />
+                        </Plane>
+                    </div>
+                    <div className={styles.figureWrapper}>
+                        <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                            <img className="img" src="/abstract2.jpg" />
+                        </Plane>
+                    </div>
+                    <div className={styles.figureWrapper}>
+                        <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                            <img className="img" src="/abstract3.jpg" />
+                        </Plane>
+                    </div>
+                    <div className={styles.figureWrapper}>
+                        <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                            <img className="img" src="/abstract4.jpg" />
+                        </Plane>
+                    </div>
+                    <div className={styles.figureWrapper}>
+                        <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                            <img className="img" src="/abstract1.webp" />
+                        </Plane>
+                    </div>
+                    <div className={styles.figureWrapper}>
+                        <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                            <img className="img" src="/abstract2.jpg" />
+                        </Plane>
+                    </div>
+                    <div className={styles.figureWrapper}>
+                        <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                            <img className="img" src="/abstract3.jpg" />
+                        </Plane>
+                    </div>
+                        <div className={styles.figureWrapper}>
+                            <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                                <img className="img" src="/abstract4.jpg" />
+                            </Plane>
+                        </div>
+                        <div className={styles.figureWrapper}>
+                            <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                                <img className="img" src="/abstract1.webp" />
+                            </Plane>
+                        </div>
+                        <div className={styles.figureWrapper}>
+                            <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                                <img className="img" src="/abstract2.jpg" />
+                            </Plane>
+                        </div>
+                        <div className={styles.figureWrapper}>
+                            <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                                <img className="img" src="/abstract3.jpg" />
+                            </Plane>
+                        </div>
+                        <div className={styles.figureWrapper}>
+                            <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className={styles.figure}>
+                                <img className="img" src="/abstract4.jpg" />
+                            </Plane>
+                        </div>
+                    </div> */}
 
-                {/* <div className={styles.box}>
+                    {/* <div className={styles.box}>
 
                 </div> */}
-                {/* <Canvas camera={{fov: 8, position: [0, 0, 10]}} style={{position: 'absolute', left: 0, top: 0}}>
+                    {/* <Canvas camera={{fov: 8, position: [0, 0, 10]}} style={{position: 'absolute', left: 0, top: 0}}>
                 
                 <Suspense fallback={null}>
                 {workSlideShow.map((slide, index) => (
@@ -196,10 +219,9 @@ const Works = () => {
                     ))}
                 </Suspense>
             </Canvas> */}
+                </div>
             </div>
-        </div>
-        </Curtains>
-    );
+            );
 }
 
-export default Works;
+            export default Works;
