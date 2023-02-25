@@ -121,7 +121,7 @@ gsap.from(textRef.current, {
         <>
             <mesh onClick={() => navigate()} onPointerEnter={()=> onHover(1)} onPointerLeave={() => onHover(0)} onPointerMove={(e) => mouse(e)} ref={meshRef}>
                 <planeGeometry ref={ref2} args={[1, 0.7, 16, 16]} />
-                <slideShaderMaterial uVelo={velo}  ref={ref} uTexture={image}/>
+                <slideShaderMaterial uVelo={velo}  ref={ref} uTexture={'test.webp'}/>
                 {/* <Html style={{backgroundColor: 'red', pointerEvents: 'none'}}>
                     <div >
                         <h1>TEST</h1>
