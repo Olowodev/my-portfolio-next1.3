@@ -61,6 +61,7 @@ const Picture = ({velo, cover, index, state, title}) => {
     const {gl} = useThree()
     useEffect(() => {
         gl.domElement.addEventListener('webglcontextloss', ()=>{
+            console.log('testing')
             gl.forceContextRestore()
         })
     }, [gl])
