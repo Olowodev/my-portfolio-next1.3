@@ -36,11 +36,11 @@ void main() {
     // vec4 imgColor = texture2D(uTexture, uv + offset);
     vec4 imgColor = texture2D(uTexture, zoomedUV);
     float gray = dot(imgColor.rgb, vec3(0.299, 0.587, 0.114));
-    if(uHover > 0.) {
-    gl_FragColor = imgColor;
-    }else{     
+    // if(uHover > 0.) {
+    // gl_FragColor = imgColor;
+    // }else{     
     gl_FragColor = vec4(vec3(gray), 1.0);
-    }
+    // }
     // gl_FragColor = vec4(vec3(gray), 1.0);
 
 }

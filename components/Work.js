@@ -6,7 +6,6 @@ import { Html, shaderMaterial } from '@react-three/drei';
 import { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import slideVertex from "raw-loader!glslify-loader!../shaders/slideVertex.vert"
 import slideFragment from "raw-loader!glslify-loader!../shaders/slideFragment.frag"
-import slideFragment2 from "raw-loader!glslify-loader!../shaders/fragment2.frag"
 import { workSlideShow } from '../data';
 import {useRouter} from 'next/router'
 import gsap from 'gsap';
@@ -55,15 +54,15 @@ const Picture = ({velo, cover, index, state, title}) => {
     const meshRef = useRef()
     const textRef = useRef()
     const ref2 = useRef()
+    const hover = useRef(false)
     const [hovered, setHovered] = useState(false)
     const router = useRouter()
 
     const {gl} = useThree()
     useEffect(() => {
         gl.forceContextRestore()
-        return ()=> {
-        gl.forceContextLoss()
-        }
+        console.log('restored')
+        
     }, [gl])
 
     useEffect(()=> {
@@ -96,19 +95,21 @@ const Picture = ({velo, cover, index, state, title}) => {
     
     const onHover = (value) => {
         ref.current.uHover = value
-        setHovered(!hovered)
+        hover.current = !(hover.current)
+        // setHovered(!hovered)
         console.log(hovered)
     }
 
     const navigate = () => {
         router.push('/works/work')
-        setHovered(false)
+        // setHovered(false)
+        hover.current = false
     }
 
     useEffect(() => {
-        document.body.style.cursor = hovered ? 'pointer' : 'auto'
+        document.body.style.cursor = hover.current ? 'pointer' : 'auto'
 
-    }, [hovered])
+    }, [hover])
     const mouse = (e) => {
         ref.current.uMouse = e.point
     }
@@ -142,7 +143,7 @@ const Picture = ({velo, cover, index, state, title}) => {
                     </div>
                 </Html> */}
                 
-                    <HTML title={title} hovered={hovered} textRef={textRef} />
+                    <HTML title={title} hovered={hover.current} textRef={textRef} />
                 
             </mesh>
         </>

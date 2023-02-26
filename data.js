@@ -20,3 +20,26 @@ export const workSlideShow = [
         title: 'MUSHROOM'
     },
 ]
+
+export const workGallery = [
+    {
+        id: 1,
+        cover: 'abstract11.webp',
+        title: 'TRINAC'
+    },
+    {
+        id: 2,
+        cover: 'abstract21.jpg',
+        title: 'WOMAN'
+    },
+    {
+        id: 3,
+        cover: 'abstract31.jpg',
+        title: 'PORTFOLIO'
+    },
+    {
+        id: 4,
+        cover: 'abstract41.jpg',
+        title: 'MUSHROOM'
+    },
+]

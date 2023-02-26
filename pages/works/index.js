@@ -4,23 +4,51 @@ import { useRouter } from "next/router";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
 import Navbar from "../../components/navbar/Navbar";
-import slideVertex from "raw-loader!glslify-loader!../../shaders/test.vert"
-import slideFragment from "raw-loader!glslify-loader!../../shaders/test.frag"
+
 import styles from '../../styles/workStyles/works.module.css'
 import * as THREE from 'three'
 import { Color, Texture, TextureLoader, Vector3 } from "three";
-import { workSlideShow } from "../../data";
+import { workGallery, workSlideShow } from "../../data";
+import fragment from "raw-loader!glslify-loader!../../shaders/fragment.frag"
+import vertex from "raw-loader!glslify-loader!../../shaders/vertex.vert"
 import gsap from "gsap";
 import { Plane } from 'react-curtains'
+import fragment2 from "raw-loader!glslify-loader!../../shaders/fragment2.frag"
+import vertex2 from "raw-loader!glslify-loader!../../shaders/vertex2.vert"
 import { Curtains, useCurtainsEvent } from "react-curtains";
 
-const SlideShaderMaterial = shaderMaterial(
-    { uVelo: 0, uTime: 0, uHover: 0, uColor: new Color(1, 0.2, 1), uTexture: new Texture(), uMouse: new Vector3(), uPosition: new Vector3(), uProgress: 0, uMeshScale: new THREE.Vector2(1, 1), uMeshPosition: new THREE.Vector2(0, 0), uViewSize: new THREE.Vector2(1, 1) },
-    slideVertex,
-    slideFragment
+
+
+const MyShaderMaterial = shaderMaterial(
+    { uTime: 0, uColor: new Color(1, 0.2, 1), uTexture: new Texture() },
+    vertex,
+    fragment
 )
 
-extend({ SlideShaderMaterial })
+extend({MyShaderMaterial})
+
+
+const Wave = () => {
+    const ref = useRef()
+    useFrame(({clock}) => (ref.current.uTime = clock.getElapsedTime()))
+
+    const [image] = useLoader(TextureLoader, ['test.webp'])
+    return (
+        <mesh>
+            <planeGeometry args={[0.4, 0.4, 16, 16]} />
+            <myShaderMaterial  ref={ref} uTexture={image}/>
+        </mesh>
+    )
+}
+
+
+const SlideShaderMaterial01 = shaderMaterial(
+    { uVelo: 0, uTime: 0, uHover: 0, uColor: new Color(1, 0.2, 1), uTexture: new Texture(), uMouse: new Vector3(), uPosition: new Vector3(), uProgress: 0, uMeshScale: new THREE.Vector2(1, 1), uMeshPosition: new THREE.Vector2(0, 0), uViewSize: new THREE.Vector2(1, 1) },
+    vertex2,
+    fragment2
+)
+
+extend({ SlideShaderMaterial01 })
 
 const HTML = ({ hovered, textRef, title }) => {
     const animate = (node) => {
@@ -53,7 +81,7 @@ const HTML = ({ hovered, textRef, title }) => {
     )
 }
 
-const Picture = ({ velo, cover, index, state, title }) => {
+const Picture01 = ({ velo, cover, index, state, title }) => {
     const ref = useRef()
     const meshRef = useRef()
     const textRef = useRef()
@@ -66,12 +94,18 @@ const Picture = ({ velo, cover, index, state, title }) => {
         //     console.log('testing')
         //     gl.forceContextRestore()
         // })
-        console.log(gl.getContext())
-        gl.forceContextRestore()
-        return ()=>{
-            gl.forceContextLoss()
-        }
-    }, [gl])
+    //     console.log(gl.getContext())
+    //     setTimeout(()=> {
+    //         gl.forceContextRestore()
+
+    //     console.log('restored2')
+    // }, 1000)
+
+    return ()=> {
+        gl.forceContextLoss()
+    }
+        
+    }, [])
 
     const onImageClick = () => {
 
@@ -118,7 +152,7 @@ const Picture = ({ velo, cover, index, state, title }) => {
         <>
             <mesh onClick={() => navigate()} onPointerEnter={() => onHover(1)} onPointerLeave={() => onHover(0)} onPointerMove={(e) => mouse(e)} ref={meshRef}>
                 <planeBufferGeometry ref={ref2} args={[1, 0.7, 16, 16]} />
-                <slideShaderMaterial uVelo={velo} ref={ref} uTexture={image} />
+                <slideShaderMaterial01 uVelo={velo} ref={ref} uTexture={image} />
 
 
                 <HTML title={title} hovered={hovered} textRef={textRef} />
@@ -223,14 +257,20 @@ const Works = () => {
                     {/* <div className={styles.box}>
 
                 </div> */}
-                    <Canvas camera={{fov: 8, position: [0, 0, 10]}} style={{position: 'absolute', left: 0, top: 0}}>
+                    <Canvas camera={{fov: 8, position: [0, 0, 10]}} style={{position: 'absolute', left: 0, top: 0, zIndex: 200}}>
                 
                 <Suspense fallback={null}>
-                {workSlideShow.map((slide, index) => (
-                        <Picture key={slide.id} index={index} {...slide} />
+                {workGallery.map((slide, index) => (
+                        <Picture01 key={slide.id} index={index} {...slide} />
                     ))}
                 </Suspense>
             </Canvas>
+            {/* <Canvas camera={{fov: 8, position: [0, 0, 5]}} style={{position: 'absolute', left: 0, top: 0, zIndex: 100}}>
+                
+                <Suspense fallback={null}>
+                    <Wave />
+                </Suspense>
+            </Canvas> */}
                 </div>
             </div>
             );
