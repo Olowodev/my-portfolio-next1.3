@@ -54,7 +54,7 @@ const Picture = ({velo, cover, index, state, title}) => {
     const meshRef = useRef()
     const textRef = useRef()
     const ref2 = useRef()
-    const hover = useRef(false)
+    // const hover = useRef(false)
     const [hovered, setHovered] = useState(false)
     const router = useRouter()
 
@@ -95,21 +95,21 @@ const Picture = ({velo, cover, index, state, title}) => {
     
     const onHover = (value) => {
         ref.current.uHover = value
-        hover.current = !(hover.current)
-        // setHovered(!hovered)
+        // hover.current = !(hover.current)
+        setHovered(!hovered)
         console.log(hovered)
     }
 
     const navigate = () => {
         router.push('/works/work')
-        // setHovered(false)
-        hover.current = false
+        setHovered(false)
+        // hover.current = false
     }
 
     useEffect(() => {
-        document.body.style.cursor = hover.current ? 'pointer' : 'auto'
+        document.body.style.cursor = hovered ? 'pointer' : 'auto'
 
-    }, [hover])
+    }, [hovered])
     const mouse = (e) => {
         ref.current.uMouse = e.point
     }
@@ -143,7 +143,7 @@ const Picture = ({velo, cover, index, state, title}) => {
                     </div>
                 </Html> */}
                 
-                    <HTML title={title} hovered={hover.current} textRef={textRef} />
+                    <HTML title={title} hovered={hovered} textRef={textRef} />
                 
             </mesh>
         </>

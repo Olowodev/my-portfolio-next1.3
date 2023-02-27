@@ -155,7 +155,7 @@ const Picture01 = ({ velo, cover, index, state, title }) => {
                 <slideShaderMaterial01 uVelo={velo} ref={ref} uTexture={image} />
 
 
-                <HTML title={title} hovered={hovered} textRef={textRef} />
+                {/* <HTML title={title} hovered={hovered} textRef={textRef} /> */}
 
             </mesh>
         </>
