@@ -29,12 +29,12 @@
 
 
 .firstName:hover p {
-    transform: translateY(-175px);
+    transform: translateY(-11.8vw);
     transition: transform 2s;
 }
 
 .firstName:hover ~ .lastName p {
-    transform: translateY(-175px);
+    transform: translateY(-11.8vw);
     transition: transform 2s;
 }  
 

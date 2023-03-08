@@ -176,7 +176,7 @@ const Works = () => {
     return (
         <div className={`${styles.works} works`}>
             <Navbar />
-            <div style={{ position: 'relative', height: '100vh' }}>
+            <div style={{ position: 'relative' }}>
                 <div className={styles.marquee}>
                     <div className={styles.marquee_inner} aria-hidden='true'>
                         <span>WORK</span>
@@ -187,6 +187,33 @@ const Works = () => {
                         <span>WORK</span>
                     </div>
 
+                </div>
+                <div className={styles.gridWrapper}>
+                    <div className={styles.grid}>
+                        <div className={styles.cell}>
+                            <a className={styles.wrapLink}>
+                            <img src="./abstract1.webp" />
+                            </a>
+                        </div>
+                        <div className={styles.cell}>
+                            <a className={styles.wrapLink}>
+                            <img src="./abstract2.jpg" />
+                            </a>
+                        </div>
+                        <div className={styles.cell}>
+                            <a className={styles.wrapLink}>
+                            <img src="./abstract3.jpg" />
+                            </a>
+                        </div>
+                        <div className={styles.cell}>
+                            <a className={styles.wrapLink}>
+                            <img src="./abstract4.jpg" />
+                            </a>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
                 {/* <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className="BasicPlane">
                         <img className="img" src="/abstract2.jpg" />
@@ -257,14 +284,14 @@ const Works = () => {
                     {/* <div className={styles.box}>
 
                 </div> */}
-                    <Canvas camera={{fov: 8, position: [0, 0, 10]}} style={{position: 'absolute', left: 0, top: 0, zIndex: 200}}>
+                    {/* <Canvas camera={{fov: 8, position: [0, 0, 10]}} style={{position: 'absolute', left: 0, top: 0, zIndex: 200}}>
                 
                 <Suspense fallback={null}>
                 {workGallery.map((slide, index) => (
                         <Picture01 key={slide.id} index={index} {...slide} />
                     ))}
                 </Suspense>
-            </Canvas>
+            </Canvas> */}
             {/* <Canvas camera={{fov: 8, position: [0, 0, 5]}} style={{position: 'absolute', left: 0, top: 0, zIndex: 100}}>
                 
                 <Suspense fallback={null}>
