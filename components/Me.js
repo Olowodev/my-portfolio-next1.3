@@ -22,6 +22,14 @@ const Wave = () => {
     const ref = useRef()
     useFrame(({clock}) => (ref.current.uTime = clock.getElapsedTime()))
 
+    // const hover = (pointer) => {
+    //     const lastname = document.getElementById('lastname')
+    //     const canvas = document.getElementById('canvas')
+    //     lastname.style.zIndex = pointer == 'over' ? -1 : -2
+    //     canvas.style.zIndex = pointer == 'over' ? -2 : -1
+    //     console.log(pointer)
+    // }
+
     const [image] = useLoader(TextureLoader, ['test.webp'])
     return (
         <mesh>
@@ -31,6 +39,7 @@ const Wave = () => {
     )
 }
 const Me = () => {
+    
     return (
         <>
         <Navbar />
@@ -41,7 +50,7 @@ const Me = () => {
                         <p id='top' >ADEBAYO</p>
                         <p >A SOFTWARE</p>
                     </div>
-                    <div data-scroll data-scroll-speed="1" className={styles.lastName}>
+                    <div data-scroll data-scroll-speed="1" id='lastname' className={styles.lastName}>
                         <p>OLOWOFOYEKU</p>
                         <p>DEVELOPER</p>
                     </div>
@@ -50,7 +59,7 @@ const Me = () => {
                     </div> */}
                 </div>
             </div>
-            <Canvas camera={{fov: 8, position: [0, 0, 5]}} style={{position: 'absolute', left: 0, top: 0, zIndex: -1}}>
+            <Canvas id='canvas' camera={{fov: 8, position: [0, 0, 5]}} style={{position: 'absolute', left: 0, top: 0, zIndex: -1}}>
                 
                 <Suspense fallback={null}>
                     <Wave />

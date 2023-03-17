@@ -179,12 +179,12 @@ const Works = () => {
             <div style={{ position: 'relative' }}>
                 <div className={styles.marquee}>
                     <div className={styles.marquee_inner} aria-hidden='true'>
-                        <span>WORK</span>
-                        <span>WORK</span>
-                        <span>WORK</span>
-                        <span>WORK</span>
-                        <span>WORK</span>
-                        <span>WORK</span>
+                        <span>WORKS</span>
+                        <span>WORKS</span>
+                        <span>WORKS</span>
+                        <span>WORKS</span>
+                        <span>WORKS</span>
+                        <span>WORKS</span>
                     </div>
 
                 </div>
