@@ -1,0 +1,44 @@
+.contactCont {
+    padding: 0 4vw;
+    padding-top: 150px;
+}
+
+.serviceSec {
+    padding-bottom: 150px;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    width: 50%;
+}
+
+.inputWrapper {
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.inputWrapper input {
+    background-color: transparent;
+    width: 100%;
+    line-height: 1.1;
+    letter-spacing: -.03em;
+    padding-bottom: 20px;
+    color: #fff;
+}
+
+.inputWrapper label {
+    width: 100%;
+    line-height: 1.1;
+    letter-spacing: -.03em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    pointer-events: none;
+}

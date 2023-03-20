@@ -40,7 +40,7 @@ const Navbar = () => {
                     <Link onClick={toggle} href={'/'}><p>INDEX</p></Link>
                     <Link onClick={toggle} href={'/works'}><p>WORKS</p></Link>
                     <Link ref={ref} onClick={downloadPDF} href={''}><p>RESUME</p></Link>
-                    <Link onClick={toggle} href={'/'}><p>CONTACT</p></Link>
+                    <Link onClick={toggle} href={'/contact'}><p>CONTACT</p></Link>
                 </div>
             </div>
         </div>

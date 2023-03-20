@@ -43,3 +43,64 @@ export const workGallery = [
         title: 'MUSHROOM'
     },
 ]
+
+
+export const services = [
+    {
+        id: 1,
+        title: 'Website',
+    },
+    {
+        id: 1,
+        title: 'Front-end Development',
+    },
+    {
+        id: 1,
+        title: 'Back-end Development',
+    },
+    {
+        id: 1,
+        title: 'App Development',
+    },
+]
+
+export const budgetRanges = [
+    {
+        id: 1,
+        title: 'Less than $500'
+    },
+    {
+        id: 2,
+        title: '$500 - $2K'
+    },
+    {
+        id: 3,
+        title: '$2K - $5K'
+    },
+    {
+        id: 4,
+        title: 'More than $5K'
+    },
+]
+
+export const deliveryPeriod = [
+    {
+        id: 1,
+        title: 'Urgent'
+    },
+    {
+        id: 2,
+        title: '3 months'
+    },
+    {
+        id: 3,
+        title: '6 months'
+    },{
+        id: 4,
+        title: '9 months'
+    },
+    {
+        id: 5,
+        title: 'To be discussed'
+    },
+]

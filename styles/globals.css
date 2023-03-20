@@ -160,8 +160,12 @@ html, body {
   background-color: #000; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: calc(100vw / 1920 * 10);
+  /* font-size: calc(100vw / 1920 * 10); */
 
+}
+
+input {
+  all: unset;
 }
 
 a:hover {

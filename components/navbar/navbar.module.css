@@ -9,7 +9,7 @@
     padding: 10px 50px;
     z-index: 5000;
     mix-blend-mode: difference;
-    border-bottom: 1px solid #111;
+    border-bottom: 1px solid rgb(104, 104, 104);
 }
 
 .menuButton {
