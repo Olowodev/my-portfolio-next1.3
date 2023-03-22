@@ -40,9 +40,13 @@
     transition: color 0.3s cubic-bezier(0.215, 0.610, 0.355, 1) 0s;
 }
 
-.contactButton:hover::before {
-    transform: translateX(0);
+.contactButton:hover {
+    background-color: #fff;
 }
+
+/* .contactButton:hover::before {
+    transform: translateX(0);
+} */
 
 .contactButton::before {
     content: '';

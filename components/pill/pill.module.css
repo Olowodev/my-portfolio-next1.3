@@ -9,4 +9,10 @@
     margin-right: 15px;
     line-height: 1.1;
     letter-spacing: -.03em;
+    cursor: pointer;
+}
+
+.pill:hover {
+    background-color: #fff;
+    color: black;
 }

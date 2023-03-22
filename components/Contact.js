@@ -1,8 +1,14 @@
 import styles from '../styles/homeStyles/Contact.module.css'
 import { FaGithub, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa'
+import { useRouter } from 'next/router';
 
 
 const Contact = () => {
+    const router = useRouter()
+
+    const handleClick = () => {
+        router.push('/contact')
+    }
     return (
         <section id="contact" className={styles.contact}>
             <div className={styles.contactContainer}>
@@ -11,7 +17,7 @@ const Contact = () => {
                     <p>LET&apos;S TALK</p>
                 </div>
                 <div className={styles.contactButtonContainer}>
-                    <div className={styles.contactButton}>
+                    <div onClick={handleClick} className={styles.contactButton}>
                         <p>Discuss Your Project</p>
                     </div>
                 </div>
