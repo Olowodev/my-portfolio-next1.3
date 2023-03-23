@@ -5,7 +5,7 @@
 } 
 
 .meMainContainer {
-    margin: 0px 90px 0px 100px;
+    /* margin: 0px 90px 0px 100px; */
     display: flex;
     padding-top: 80px;
     flex-direction: column;

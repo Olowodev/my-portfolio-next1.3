@@ -24,10 +24,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 120px;
+    padding: 2rem;
     border: 2px solid #fff;
     border-radius: 100px;
-    font-size: 1.7vw;
+    font-size: calc(1.3rem + 1vw);
     position: relative;
     overflow: hidden;
     cursor: pointer;

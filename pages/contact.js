@@ -12,36 +12,49 @@ const Contact = () => {
     const [company, setCompany] = useState()
     const [email, setEmail] = useState()
     const [details, setDetails] = useState()
+
+
+    const onServiceClick = (text) => {
+        setService(text)
+    }
+
+    const onPeriodClick = (text) => {
+        setPeriod(text)
+    }
+
+    const onBudgetClick = (text) => {
+        setBudget(text)
+    }
     return (
         <div>
             <Navbar />
             <div className={styles.contactCont}>
                 <div className={styles.serviceSec}>
-                    <p style={{fontSize: '4vw', marginBottom: '70px'}}>Which of my services do you need?</p>
+                    <p style={{fontSize: 'calc(1.5rem + 3vw)', marginBottom: '50px'}}>Which of my services do you need?</p>
                     <ul style={{listStyle: 'none', padding: 0}}>
                         {services.map((service, index) => (
-                            <Pill text={service.title} />
+                            <Pill onClick={()=>onServiceClick(service.title)} text={service.title} />
                         ))}
                     </ul>
                 </div>
                 <div className={styles.serviceSec}>
-                <p style={{fontSize: '4vw', marginBottom: '70px'}}>What is your budget range?</p>
+                <p style={{fontSize: 'calc(1.5rem + 3vw)', marginBottom: '50px'}}>What is your budget range?</p>
                     <ul style={{listStyle: 'none', padding: 0}}>
                         {budgetRanges.map((budget, index) => (
-                            <Pill text={budget.title} />
+                            <Pill onClick={()=>onBudgetClick(budget.title)} text={budget.title} />
                         ))}
                     </ul>
                 </div>
                 <div className={styles.serviceSec}>
-                <p style={{fontSize: '4vw', marginBottom: '70px'}}>Project Delivery Period</p>
+                <p style={{fontSize: 'calc(1.5rem + 3vw)', marginBottom: '50px'}}>Project Delivery Period</p>
                     <ul style={{listStyle: 'none', padding: 0}}>
                         {deliveryPeriod.map((period, index) => (
-                            <Pill text={period.title} />
+                            <Pill onClick={()=>onPeriodClick(period.title)} text={period.title} />
                         ))}
                     </ul>
                 </div>
                 <div className={styles.formWrapper}>
-                    <h2 style={{fontSize: '4vw', marginBottom: '70px', maxWidth: '800px', textAlign: 'center'}}>Please tell us more about you and your project.</h2>
+                    <p style={{fontSize: 'calc(1.5rem + 3vw)', marginBottom: '50px', textAlign: 'center'}}>Please tell us more.</p>
                     <div className={styles.form}>
                         <div className={styles.inputWrapper}>
                             <label for="full_name">Your Name</label>
@@ -61,7 +74,7 @@ const Contact = () => {
                         </div>
                     </div>
                     <div className={styles.contactButton}>
-                        <p>Discuss Your Project</p>
+                        <p>Let's get it!!</p>
                     </div>
                 </div>
             </div>
