@@ -4,11 +4,19 @@
     z-index: 3;
 } 
 
+.meMain {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .meMainContainer {
     /* margin: 0px 90px 0px 100px; */
     display: flex;
-    padding-top: 80px;
+    /* padding-top: 80px; */
     flex-direction: column;
+    
     font-family: 'Betatron-Regular';
 }
 

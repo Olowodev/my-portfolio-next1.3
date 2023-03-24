@@ -74,7 +74,7 @@ const Contact = () => {
                         </div>
                     </div>
                     <div className={styles.contactButton}>
-                        <p>Let's get it!!</p>
+                        <p>Submit!!</p>
                     </div>
                 </div>
             </div>

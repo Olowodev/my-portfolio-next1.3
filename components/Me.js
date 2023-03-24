@@ -1,7 +1,7 @@
 import styles from '../styles/homeStyles/Me.module.css'
 import { Suspense, useEffect, useRef } from 'react';
 import {Canvas, extend, useFrame, useLoader} from "@react-three/fiber"
-import { Color, Texture, TextureLoader, Vector2 } from 'three';
+import { Color, Texture, TextureLoader, Vector2, Vector3 } from 'three';
 import fragment from "raw-loader!glslify-loader!../shaders/fragment.frag"
 import vertex from "raw-loader!glslify-loader!../shaders/vertex.vert"
 import { shaderMaterial } from '@react-three/drei';
@@ -20,7 +20,9 @@ extend({MyShaderMaterial})
 
 const Wave = () => {
     const ref = useRef()
+    const meshRef = useRef()
     useFrame(({clock}) => (ref.current.uTime = clock.getElapsedTime()))
+
 
     // const hover = (pointer) => {
     //     const lastname = document.getElementById('lastname')
@@ -32,8 +34,8 @@ const Wave = () => {
 
     const [image] = useLoader(TextureLoader, ['test.webp'])
     return (
-        <mesh>
-            <planeGeometry args={[0.4, 0.4, 16, 16]} />
+        <mesh position={new Vector3(0, -0.05, 0)} ref={meshRef}>
+            <planeGeometry args={[0.35, 0.35, 16, 16]} />
             <myShaderMaterial  ref={ref} uTexture={image}/>
         </mesh>
     )
