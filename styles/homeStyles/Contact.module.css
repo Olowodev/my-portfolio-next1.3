@@ -9,7 +9,7 @@
 .contactHeader {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 6.1vw;
+    font-size: calc(.6rem + 6.1vw);
     letter-spacing: 0.5px;
 
 }

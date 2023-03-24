@@ -2,7 +2,7 @@
     /* height: 100vh; */
     overflow-y: hidden; 
     pointer-events: none;
-    margin-top: 50px;
+    padding-top: 50px;
     /* background: linear-gradient(116.82deg, #be04ff 0%, #7100bd 100%); */
 } 
 
@@ -18,7 +18,8 @@
 
 .paragraph {
     text-indent: 25%;
-    font-size: calc(.6rem + 5vw);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: calc(.7rem + 4.5vw);
 }
 .paragraph span {
     font-family: 'Betatron-Regular';
@@ -26,10 +27,13 @@
 
 .title {
     position: absolute;
-    top: 2em;
+    top: 1.5vw;
     left: 4vw;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 16px;
 }
+
+
 
 .aboutBox {
     position: absolute;
@@ -60,10 +64,30 @@
     position: relative;
 }
 
-.aboutContainer p {
+/* .aboutContainer p {
     /* text-align: center; */
     /* font-size: 6.5vw; */
-    /* font-weight: 600; */
+    /* font-weight: 600; 
     color: rgba(255, 255, 255, 0.8);
-    /* transform: translateY(600px); */
-} 
+     transform: translateY(600px); 
+}  */
+
+@media screen and (max-width: 500px) {
+    .about {
+        margin-top: -50px;
+    }
+
+    .paragraph {
+        margin-top: 50px;
+        text-indent: 5%;
+    }
+
+    .title {
+        top: -19vw;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        color: #fff;
+        font-size: 30px;
+    }
+}
