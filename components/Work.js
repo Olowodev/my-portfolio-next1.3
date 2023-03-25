@@ -158,7 +158,7 @@ const Work = ({velo, state}) => {
         <section id="work" className={styles.work}>
             <div className={styles.workContainer}>
                 <div>
-                    <h1>WORK</h1>
+                    <h3>WORK</h3>
                 </div>
             {/* <p className={styles.workName}>TRINAC</p> */}
             </div>

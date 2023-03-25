@@ -12,6 +12,9 @@ const Contact = () => {
     const [company, setCompany] = useState()
     const [email, setEmail] = useState()
     const [details, setDetails] = useState()
+    const [serviceClicked, setServiceClicked] = useState(false)
+    const [budgetClicked, setBudgetClicked] = useState(false)
+    const [periodClicked, setPeriodClicked] = useState(false)
 
 
     const onServiceClick = (text) => {
@@ -32,24 +35,24 @@ const Contact = () => {
                 <div className={styles.serviceSec}>
                     <p style={{fontSize: 'calc(1.5rem + 3vw)', marginBottom: '50px'}}>Which of my services do you need?</p>
                     <ul style={{listStyle: 'none', padding: 0}}>
-                        {services.map((service, index) => (
-                            <Pill onClick={()=>onServiceClick(service.title)} text={service.title} />
+                        {services.map((serviceObj, index) => (
+                            <Pill state={service} clicked={serviceClicked} setClicked={setServiceClicked} onClick={()=>onServiceClick(serviceObj.title)} text={serviceObj.title} />
                         ))}
                     </ul>
                 </div>
                 <div className={styles.serviceSec}>
                 <p style={{fontSize: 'calc(1.5rem + 3vw)', marginBottom: '50px'}}>What is your budget range?</p>
                     <ul style={{listStyle: 'none', padding: 0}}>
-                        {budgetRanges.map((budget, index) => (
-                            <Pill onClick={()=>onBudgetClick(budget.title)} text={budget.title} />
+                        {budgetRanges.map((budgetObj, index) => (
+                            <Pill state={budget} clicked={budgetClicked} setClicked={setBudgetClicked} onClick={()=>onBudgetClick(budgetObj.title)} text={budgetObj.title} />
                         ))}
                     </ul>
                 </div>
                 <div className={styles.serviceSec}>
                 <p style={{fontSize: 'calc(1.5rem + 3vw)', marginBottom: '50px'}}>Project Delivery Period</p>
                     <ul style={{listStyle: 'none', padding: 0}}>
-                        {deliveryPeriod.map((period, index) => (
-                            <Pill onClick={()=>onPeriodClick(period.title)} text={period.title} />
+                        {deliveryPeriod.map((periodObj, index) => (
+                            <Pill state={period} clicked={periodClicked} setClicked={setPeriodClicked} onClick={()=>onPeriodClick(periodObj.title)} text={periodObj.title} />
                         ))}
                     </ul>
                 </div>

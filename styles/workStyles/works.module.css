@@ -1,4 +1,9 @@
 .works {
+    /* background-color: #ffffff30; */
+}
+
+.bgHover {
+    background-color: #ffffff20;
 }
 
 .marquee {
@@ -7,6 +12,7 @@
     overflow: hidden;
     mix-blend-mode: difference;
     width: 100%;
+    pointer-events: none;
     top: 50px;
 }
 
@@ -36,7 +42,7 @@
     flex-wrap: wrap;
     width: 100%;
     padding: 0 3vw;
-    margin-top: calc(6vw);
+    padding-top: calc(6vw);
     justify-content: space-between;
 }
 
@@ -44,6 +50,7 @@
     width: 31.5%;
     flex-shrink: 0;
     margin-top: 50px;
+    cursor: pointer;
 }
 
 /* .wrap {
@@ -67,6 +74,38 @@
 
 .cell:nth-child(3) {
     margin-left: 68%;
+}
+
+.cell:nth-child(4) {
+    margin-bottom: 50px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .grid {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .cell {
+        width: auto;
+    }
+
+    .wrapLink img {
+        height: 330px;
+    }
+
+    .cell:first-child {
+        margin-right: 0;
+    }
+
+    .cell:nth-child(2) {
+        margin-left: 0;
+    }
+
+    .cell:nth-child(3) {
+        margin-left: 0;
+    }
 }
 
 /* .box {

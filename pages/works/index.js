@@ -170,11 +170,11 @@ const Picture01 = ({ velo, cover, index, state, title }) => {
 // ]
 
 const Works = () => {
-
+    const [hover, setHover] = useState(false)
     
 
     return (
-        <div className={`${styles.works} works`}>
+        <div className={`${styles.works} works ${hover ? styles.bgHover : null}`}>
             <Navbar />
             <div style={{ position: 'relative' }}>
                 <div className={styles.marquee}>
@@ -190,22 +190,22 @@ const Works = () => {
                 </div>
                 <div className={styles.gridWrapper}>
                     <div className={styles.grid}>
-                        <div className={styles.cell}>
+                        <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
                             <a className={styles.wrapLink}>
                             <img src="./abstract1.webp" />
                             </a>
                         </div>
-                        <div className={styles.cell}>
+                        <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
                             <a className={styles.wrapLink}>
                             <img src="./abstract2.jpg" />
                             </a>
                         </div>
-                        <div className={styles.cell}>
+                        <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
                             <a className={styles.wrapLink}>
                             <img src="./abstract3.jpg" />
                             </a>
                         </div>
-                        <div className={styles.cell}>
+                        <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
                             <a className={styles.wrapLink}>
                             <img src="./abstract4.jpg" />
                             </a>
