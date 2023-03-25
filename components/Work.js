@@ -54,11 +54,26 @@ const Picture = ({velo, cover, index, state, title}) => {
     const meshRef = useRef()
     const textRef = useRef()
     const ref2 = useRef()
+    const [size, setSize] = useState([1, 0.7, 16, 16])
     // const hover = useRef(false)
     const [hovered, setHovered] = useState(false)
     const router = useRouter()
 
     const {gl} = useThree()
+
+    const handleSize = () => {
+        const screenWidth = window.innerWidth
+
+        if (screenWidth <= 500) {
+            setSize([0.7, 0.4, 16, 16])
+        }
+    }
+
+    useEffect(() => {
+        handleSize()
+    }, [])
+
+    window.addEventListener('resize', handleSize)
     useEffect(() => {
         gl.forceContextRestore()
         console.log('restored')
@@ -130,11 +145,13 @@ const Picture = ({velo, cover, index, state, title}) => {
 // }
 
     
+
+    
    const [image] = useLoader(TextureLoader, [cover])
     return (
         <>
             <mesh onClick={() => navigate()} onPointerEnter={()=> onHover(1)} onPointerLeave={() => onHover(0)} onPointerMove={(e) => mouse(e)} ref={meshRef}>
-                <planeGeometry ref={ref2} args={[1, 0.7, 16, 16]} />
+                <planeGeometry ref={ref2} args={size} />
                 <slideShaderMaterial uVelo={velo}  ref={ref} uTexture={image}/>
                 {/* <Html style={{backgroundColor: 'red', pointerEvents: 'none'}}>
                     <div >
