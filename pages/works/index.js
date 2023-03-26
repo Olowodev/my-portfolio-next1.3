@@ -191,24 +191,24 @@ const Works = () => {
                 <div className={styles.gridWrapper}>
                     <div className={styles.grid}>
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
-                            <a className={styles.wrapLink}>
+                            <div className={styles.wrapLink}>
                             <img src="./abstract1.webp" />
-                            </a>
+                            </div>
                         </div>
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
-                            <a className={styles.wrapLink}>
+                            <div className={styles.wrapLink}>
                             <img src="./abstract2.jpg" />
-                            </a>
+                            </div>
                         </div>
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
-                            <a className={styles.wrapLink}>
+                            <div className={styles.wrapLink}>
                             <img src="./abstract3.jpg" />
-                            </a>
+                            </div>
                         </div>
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
-                            <a className={styles.wrapLink}>
+                            <div className={styles.wrapLink}>
                             <img src="./abstract4.jpg" />
-                            </a>
+                            </div>
                         </div>
                         <div></div>
                         <div></div>
