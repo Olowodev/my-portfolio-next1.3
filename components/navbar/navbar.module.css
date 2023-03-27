@@ -34,8 +34,8 @@
     /* background-color: #111; */
     height: 100vh;
     overflow: hidden;
-    display: none;
-    z-index: 4999;
+    /* display: none; */
+    z-index: 4799;
     top: 0;
     left: 0;
     /* transform: translateY(-100vh); */
@@ -46,6 +46,14 @@
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.overlay2 {
+    z-index: 5000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
 }
 
 .menu.show {
@@ -72,6 +80,7 @@
 }
 
 .menuCont p {
+    transform: translateY(100%);
     /* transform: translateY(100%); */
 }
 

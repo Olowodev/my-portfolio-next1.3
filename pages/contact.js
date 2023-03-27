@@ -30,7 +30,7 @@ const Contact = () => {
     }
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className={styles.contactCont}>
                 <div className={styles.serviceSec}>
                     <p style={{fontSize: 'calc(1.5rem + 3vw)', marginBottom: '50px'}}>Which of my services do you need?</p>

@@ -175,7 +175,7 @@ const Works = () => {
 
     return (
         <div className={`${styles.works} works ${hover ? styles.bgHover : null}`}>
-            <Navbar />
+            {/* <Navbar /> */}
             <div style={{ position: 'relative' }}>
                 <div className={styles.marquee}>
                     <div className={styles.marquee_inner} aria-hidden='true'>

@@ -44,7 +44,7 @@ const Me = () => {
     
     return (
         <>
-        <Navbar />
+        {/* <Navbar /> */}
         <section id="me" className={styles.me}>
             <div className={styles.meMain}>
                 <div className={styles.meMainContainer}>

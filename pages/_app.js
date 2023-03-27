@@ -1,4 +1,5 @@
 import { Curtains, useCurtains, useCurtainsEvent } from 'react-curtains'
+import Navbar from '../components/navbar/Navbar'
 import '../styles/globals.css'
 // import '../components/_barba'
 
@@ -12,7 +13,10 @@ function MyApp({ Component, pageProps }) {
   return (
     // <Curtains>
     // <div data-barba='wrapper'>
-    <Component {...pageProps} />
+    <>
+      <Navbar />
+      <Component {...pageProps} />
+    </>
     // </div> 
     // </Curtains>
   )
