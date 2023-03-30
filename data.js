@@ -44,7 +44,7 @@ export const workSlideShow = [
     {
         id: 8,
         cover: 'abstract4.jpg',
-        title: 'DECALMASTERS',
+        title: 'DECAL',
         link: 'https://thedecalmasters.com'
     },
 ]

@@ -57,7 +57,7 @@ const Navbar = () => {
             });
             setTrans(false)
 
-            }, 700)
+            }, 1100)
         }
         router.events.on('routeChangeStart', animStart)
         router.events.on('routeChangeComplete', animEnd)
