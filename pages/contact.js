@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 import Pill from "../components/pill/Pill";
@@ -30,6 +31,14 @@ const Contact = () => {
     }
     return (
         <div>
+            <Head>
+        <title>Adebayo Olowofoyeku</title>
+        <meta name="description" content="Adebayo Olowofoyeku's portfolio. A full stack developer" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Scope+One&display=swap" rel="stylesheet"></link>
+      </Head>
             {/* <Navbar /> */}
             <div className={styles.contactCont}>
                 <div className={styles.serviceSec}>

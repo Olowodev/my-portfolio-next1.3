@@ -16,6 +16,7 @@ import { Plane } from 'react-curtains'
 import fragment2 from "raw-loader!glslify-loader!../../shaders/fragment2.frag"
 import vertex2 from "raw-loader!glslify-loader!../../shaders/vertex2.vert"
 import { Curtains, useCurtainsEvent } from "react-curtains";
+import Head from "next/head";
 
 
 
@@ -175,6 +176,14 @@ const Works = () => {
 
     return (
         <div className={`${styles.works} works ${hover ? styles.bgHover : null}`}>
+            <Head>
+        <title>Adebayo Olowofoyeku</title>
+        <meta name="description" content="Adebayo Olowofoyeku's portfolio. A full stack developer" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Scope+One&display=swap" rel="stylesheet"></link>
+      </Head>
             {/* <Navbar /> */}
             <div style={{ position: 'relative' }}>
                 <div className={styles.marquee}>
