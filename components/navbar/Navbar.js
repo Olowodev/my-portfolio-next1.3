@@ -33,7 +33,9 @@ const Navbar = () => {
         }
 
         const animEnd = async () => {
-            console.log('ended')
+            
+            setTimeout(async()=> {
+                console.log('ended')
             setMenu(false)
             await gsap.timeline({
                 onComplete: () => {
@@ -54,6 +56,8 @@ const Navbar = () => {
                 attr: { d: 'M 0 0 V 50 Q 50 0 100 50 V 0 z' }
             });
             setTrans(false)
+
+            }, 700)
         }
         router.events.on('routeChangeStart', animStart)
         router.events.on('routeChangeComplete', animEnd)
@@ -146,7 +150,7 @@ useEffect(()=> {
 
 
     const downloadPDF = () => {
-        const pdfURL = 'resume.pdf'
+        const pdfURL = 'resume2.pdf'
         const fileName = "Adebayo's resume"
         fetch(pdfURL)
             .then(response => response.blob())
@@ -188,7 +192,7 @@ useEffect(()=> {
                     <Link href={'/works'}><p className='menuText'>WORKS</p></Link>
                     </div>
                     <div>
-                    <Link ref={ref} onClick={downloadPDF} href={''}><p className='menuText'>RESUME</p></Link>
+                    <a style={{cursor: 'pointer'}} ref={ref} onClick={downloadPDF}><p className='menuText'>RESUME</p></a>
                     </div>
                     <div>
                     <Link href={'/contact'}><p className='menuText'>CONTACT</p></Link>
