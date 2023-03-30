@@ -191,24 +191,32 @@ const Works = () => {
                 <div className={styles.gridWrapper}>
                     <div className={styles.grid}>
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
+                            <a href="https://orpheus-nft-site.netlify.app" target={'_blank'}>
                             <div className={styles.wrapLink}>
                             <img src="./abstract1.webp" />
                             </div>
+                            </a>
                         </div>
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
+                            <a href="https://music-olowo.netlify.app" target={'_blank'}>
                             <div className={styles.wrapLink}>
                             <img src="./abstract2.jpg" />
                             </div>
+                            </a>
                         </div>
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
+                            <a href="https://gis-vanilla.netlify.app" target={'_blank'}>
                             <div className={styles.wrapLink}>
                             <img src="./abstract3.jpg" />
                             </div>
+                            </a>
                         </div>
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
+                            <a href="https://thedecalmasters.com" target={'_blank'}>
                             <div className={styles.wrapLink}>
                             <img src="./abstract4.jpg" />
                             </div>
+                            </a>
                         </div>
                         <div></div>
                         <div></div>

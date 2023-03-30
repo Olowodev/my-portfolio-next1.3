@@ -49,7 +49,7 @@ const HTML = ({hovered, textRef, title}) => {
     )
 }
 
-const Picture = ({velo, cover, index, state, title}) => {
+const Picture = ({velo, cover, index, state, title, link}) => {
     const ref = useRef()
     const meshRef = useRef()
     const textRef = useRef()
@@ -116,8 +116,9 @@ const Picture = ({velo, cover, index, state, title}) => {
     }
 
     const navigate = () => {
-        router.push('/works/work')
+        // router.push('/works/work')
         setHovered(false)
+        window.open(link, "_blank")
         // hover.current = false
     }
 

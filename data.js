@@ -1,46 +1,102 @@
 export const workSlideShow = [
+    // {
+    //     id: 1,
+    //     cover: 'abstract1.webp',
+    //     title: 'TRINAC',
+    //     link: ''
+    // },
+    // {
+    //     id: 2,
+    //     cover: 'abstract2.jpg',
+    //     title: 'WOMAN',
+    //     link: ''
+    // },
+    // {
+    //     id: 3,
+    //     cover: 'abstract3.jpg',
+    //     title: 'PORTFOLIO',
+    //     link: ''
+    // },
+    // {
+    //     id: 4,
+    //     cover: 'abstract4.jpg',
+    //     title: 'MUSHROOM',
+    //     link: ''
+    // },
     {
-        id: 1,
+        id: 5,
         cover: 'abstract1.webp',
-        title: 'TRINAC'
+        title: 'ORPHEUS',
+        link: 'https://orpheus-nft-site.netlify.app'
     },
     {
-        id: 2,
+        id: 6,
         cover: 'abstract2.jpg',
-        title: 'WOMAN'
+        title: 'MUSIC PLAYER',
+        link: 'https://music-olowo.netlify.app'
     },
     {
-        id: 3,
+        id: 7,
         cover: 'abstract3.jpg',
-        title: 'PORTFOLIO'
+        title: 'GIS 3D APP',
+        link: 'https://gis-vanilla.netlify.app'
     },
     {
-        id: 4,
+        id: 8,
         cover: 'abstract4.jpg',
-        title: 'MUSHROOM'
+        title: 'DECALMASTERS',
+        link: 'https://thedecalmasters.com'
     },
 ]
 
 export const workGallery = [
+    // {
+    //     id: 1,
+    //     cover: 'abstract11.webp',
+    //     title: 'TRINAC',
+    //     link: ''
+    // },
+    // {
+    //     id: 2,
+    //     cover: 'abstract21.jpg',
+    //     title: 'WOMAN',
+    //     link: ''
+    // },
+    // {
+    //     id: 3,
+    //     cover: 'abstract31.jpg',
+    //     title: 'PORTFOLIO',
+    //     link: ''
+    // },
+    // {
+    //     id: 4,
+    //     cover: 'abstract41.jpg',
+    //     title: 'MUSHROOM',
+    //     link: ''
+    // },
     {
-        id: 1,
-        cover: 'abstract11.webp',
-        title: 'TRINAC'
+        id: 5,
+        cover: 'abstract1.webp',
+        title: 'ORPHEUS',
+        link: 'https://orpheus-nft-site.netlify.app'
     },
     {
-        id: 2,
-        cover: 'abstract21.jpg',
-        title: 'WOMAN'
+        id: 6,
+        cover: 'abstract2.jpg',
+        title: 'MUSIC PLAYER',
+        link: 'https://music-olowo.netlify.app'
     },
     {
-        id: 3,
-        cover: 'abstract31.jpg',
-        title: 'PORTFOLIO'
+        id: 7,
+        cover: 'abstract3.jpg',
+        title: 'GIS 3D APP',
+        link: 'https://gis-vanilla.netlify.app'
     },
     {
-        id: 4,
-        cover: 'abstract41.jpg',
-        title: 'MUSHROOM'
+        id: 8,
+        cover: 'abstract4.jpg',
+        title: 'DECALMASTERS',
+        link: 'https://thedecalmasters.com'
     },
 ]
 
