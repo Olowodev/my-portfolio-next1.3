@@ -1,5 +1,5 @@
 import styles from '../styles/homeStyles/Me.module.css'
-import { Suspense, useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import {Canvas, extend, useFrame, useLoader} from "@react-three/fiber"
 import { Color, Texture, TextureLoader, Vector2, Vector3 } from 'three';
 import fragment from "raw-loader!glslify-loader!../shaders/fragment.frag"
@@ -41,6 +41,21 @@ const Wave = () => {
     )
 }
 const Me = () => {
+    const [innerWidth, setInnerWidth] = useState()
+
+    const getInnerWidth = () => {
+        setInnerWidth(window.innerWidth)
+        console.log(innerWidth)
+    }
+
+    useEffect(() => {
+        getInnerWidth()
+        window.addEventListener('resize', getInnerWidth)
+
+        return () => {
+            window.removeEventListener('resize', getInnerWidth)
+        }
+    })
     
     return (
         <>
@@ -52,6 +67,12 @@ const Me = () => {
                         <p id='top' >ADEBAYO</p>
                         <p >A SOFTWARE</p>
                     </div>
+                    { innerWidth <= 500 ?
+                    <div>
+                        <img style={{width: '100%', height: '100%'}} src='test.webp' />
+                    </div>
+                    : null
+                    }
                     <div data-scroll data-scroll-speed="1" id='lastname' className={styles.lastName}>
                         <p>OLOWOFOYEKU</p>
                         <p>DEVELOPER</p>

@@ -22,7 +22,7 @@
     font-size: calc(.7rem + 4.5vw);
 }
 .paragraph span {
-    font-family: 'Betatron-Regular';
+    font-family: 'Saol';
 }
 
 .title {
@@ -74,7 +74,7 @@
 
 @media screen and (max-width: 500px) {
     .about {
-        margin-top: -50px;
+        /* margin-top: -50px; */
     }
 
     .paragraph {

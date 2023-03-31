@@ -23,6 +23,18 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Sussie';
+  src: url('../public/SuisseIntl.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Saol';
+  src: url('../public/SaolDisplay.woff2') format('woff2');
+  font-display: swap;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -155,7 +167,7 @@ html, body {
   /*width: 100vw; */
   overscroll-behavior: none;
   /* overflow: hidden !important; */
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Sussie', sans-serif;
   color: #fff;
   background-color: #000; 
   -webkit-font-smoothing: antialiased;
