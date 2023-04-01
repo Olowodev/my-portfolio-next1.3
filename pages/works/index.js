@@ -17,6 +17,8 @@ import fragment2 from "raw-loader!glslify-loader!../../shaders/fragment2.frag"
 import vertex2 from "raw-loader!glslify-loader!../../shaders/vertex2.vert"
 import { Curtains, useCurtainsEvent } from "react-curtains";
 import Head from "next/head";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import {AiOutlineLink} from 'react-icons/ai'
 
 
 
@@ -204,12 +206,20 @@ const Works = () => {
                             <div className={styles.wrapLink}>
                             <img src="./abstract1.webp" />
                             </div>
+                            <div className={styles.absolute}>
+                                <p>Orpheus</p>
+                                <AiOutlineLink />
+                            </div>
                             </a>
                         </div>
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
                             <a href="https://music-olowo.netlify.app" target={'_blank'}>
                             <div className={styles.wrapLink}>
                             <img src="./abstract2.jpg" />
+                            </div>
+                            <div className={styles.absolute}>
+                                <p>Music App</p>
+                                <AiOutlineLink />
                             </div>
                             </a>
                         </div>
@@ -218,12 +228,20 @@ const Works = () => {
                             <div className={styles.wrapLink}>
                             <img src="./abstract3.jpg" />
                             </div>
+                            <div className={styles.absolute}>
+                                <p>GIS Web</p>
+                                <AiOutlineLink />
+                            </div>
                             </a>
                         </div>
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
                             <a href="https://thedecalmasters.com" target={'_blank'}>
                             <div className={styles.wrapLink}>
                             <img src="./abstract4.jpg" />
+                            </div>
+                            <div className={styles.absolute}>
+                                <p>Decal</p>
+                                <AiOutlineLink />
                             </div>
                             </a>
                         </div>
