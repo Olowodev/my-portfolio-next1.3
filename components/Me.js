@@ -69,7 +69,7 @@ const Me = () => {
                     </div>
                     { innerWidth <= 500 ?
                     <div>
-                        <img style={{width: '100%', height: '100%'}} src='me.jpg' />
+                        <img style={{width: '100%', height: '80%'}} src='me.jpg' />
                     </div>
                     : null
                     }
