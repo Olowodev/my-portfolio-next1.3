@@ -32,7 +32,7 @@ const Wave = () => {
     //     console.log(pointer)
     // }
 
-    const [image] = useLoader(TextureLoader, ['test.webp'])
+    const [image] = useLoader(TextureLoader, ['me.jpg'])
     return (
         <mesh position={new Vector3(0, -0.05, 0)} ref={meshRef}>
             <planeGeometry args={[0.37, 0.37, 16, 16]} />
@@ -69,7 +69,7 @@ const Me = () => {
                     </div>
                     { innerWidth <= 500 ?
                     <div>
-                        <img style={{width: '100%', height: '100%'}} src='test.webp' />
+                        <img style={{width: '100%', height: '100%'}} src='me.jpg' />
                     </div>
                     : null
                     }
