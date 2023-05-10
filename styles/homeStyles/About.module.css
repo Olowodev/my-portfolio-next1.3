@@ -24,7 +24,8 @@
 .paragraph span {
 /*     font-family: 'Saol'; */
     font-style: italic;
-    font-weight: 200;
+/*     font-weight: 200; */
+    font-family: cursive;
 }
 
 .title {
