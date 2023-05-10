@@ -22,7 +22,8 @@
     font-size: calc(.7rem + 4.5vw);
 }
 .paragraph span {
-    font-family: 'Saol';
+/*     font-family: 'Saol'; */
+    font-style: italic;
 }
 
 .title {
