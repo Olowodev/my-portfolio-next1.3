@@ -19,7 +19,7 @@
 .paragraph {
     text-indent: 25%;
     color: rgba(255, 255, 255, 0.8);
-    font-size: calc(.7rem + 4.3vw);
+    font-size: calc(.7rem + 4.5vw);
 }
 .paragraph span {
 /*     font-family: 'Saol'; */
