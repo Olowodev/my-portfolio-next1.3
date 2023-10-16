@@ -180,8 +180,9 @@ input {
   all: unset;
 }
 
-a:hover {
+.a:hover {
   color: red;
+  cursor: pointer;
 }
 
 /* #main {
