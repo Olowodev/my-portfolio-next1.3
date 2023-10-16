@@ -118,12 +118,11 @@ tl.to(state, {
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Scope+One&display=swap" rel="stylesheet"></link>
       </Head>
-      <Suspense fallback={<Loading />}>
+      
         <Me />
         <About />
         <Work velo={velo} state={state}/>
         <Contact />
-    </Suspense>
 
     </div>
   )
