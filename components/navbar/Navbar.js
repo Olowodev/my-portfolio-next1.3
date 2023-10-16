@@ -198,16 +198,16 @@ useEffect(()=> {
                 </svg>
                 <div className={styles.menuCont}>
                     <div>
-                    <div onClick={() => transition('/')}><p ref={text} className='menuText'>INDEX</p></div>
+                    <div className='a' onClick={() => transition('/')}><p ref={text} className='menuText'>INDEX</p></div>
                     </div>
                     <div>
-                    <div onClick={() => transition('/works')}><p className='menuText'>WORKS</p></div>
+                    <div className='a' onClick={() => transition('/works')}><p className='menuText'>WORKS</p></div>
                     </div>
                     <div>
                     <a style={{cursor: 'pointer'}} ref={ref} onClick={downloadPDF}><p className='menuText'>RESUME</p></a>
                     </div>
                     <div>
-                    <div onClick={() => transition('/contact')}><p className='menuText'>CONTACT</p></div>
+                    <div className='a' onClick={() => transition('/contact')}><p className='menuText'>CONTACT</p></div>
                     </div>
                 </div>
             </div>
