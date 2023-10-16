@@ -14,61 +14,61 @@ const Navbar = () => {
     const router = useRouter()
     const [trans, setTrans] = useState(false)
 
-    useEffect(() => {
-        const animStart = async () => {
-            await setTrans(true)
-            await gsap.timeline()
-            .fromTo(path2.current, {
-                attr: {d: 'M 0 100 V 100 Q 50 100 100 100 V 100 z'}
-            }, {
-                duration: 0.8,
-                ease: 'power4.in',
-                attr: { d: 'M 0 100 V 50 Q 50 0 100 50 V 100 z'}
-            }, 0)
-            .to(path2.current, {
-                duration: 0.3,
-                ease: 'power2',
-                attr: { d: 'M 0 100 V 0 Q 50 0 100 0 V 100 z'}
-            });
-        }
+    // useEffect(() => {
+    //     const animStart = async () => {
+    //         await setTrans(true)
+    //         await gsap.timeline()
+    //         .fromTo(path2.current, {
+    //             attr: {d: 'M 0 100 V 100 Q 50 100 100 100 V 100 z'}
+    //         }, {
+    //             duration: 0.8,
+    //             ease: 'power4.in',
+    //             attr: { d: 'M 0 100 V 50 Q 50 0 100 50 V 100 z'}
+    //         }, 0)
+    //         .to(path2.current, {
+    //             duration: 0.3,
+    //             ease: 'power2',
+    //             attr: { d: 'M 0 100 V 0 Q 50 0 100 0 V 100 z'}
+    //         });
+    //     }
 
-        const animEnd = async () => {
+    //     const animEnd = async () => {
             
-            setTimeout(async()=> {
-                console.log('ended')
-            setMenu(false)
-            await gsap.timeline({
-                onComplete: () => {
-                    gsap.to(path2.current, {
-                        attr: { d: 'M 0 0 V 0 Q 50 0 100 0 V 0 z'},
-                    })
+    //         setTimeout(async()=> {
+    //             console.log('ended')
+    //         setMenu(false)
+    //         await gsap.timeline({
+    //             onComplete: () => {
+    //                 gsap.to(path2.current, {
+    //                     attr: { d: 'M 0 0 V 0 Q 50 0 100 0 V 0 z'},
+    //                 })
                     
-                }
-            })
-            // .set(path.current, { 
-            //     attr: { d: 'M 0 0 V 100 Q 50 100 100 100 V 0 z' }
-            // })
-            .fromTo(path2.current, {
-                attr: {d: 'M 0 0 V 100 Q 50 100 100 100 V 0 z'}
-            }, { 
-                duration: 0.3,
-                ease: 'power2.in',
-                attr: { d: 'M 0 0 V 50 Q 50 0 100 50 V 0 z' }
-            });
-            setTrans(false)
+    //             }
+    //         })
+    //         // .set(path.current, { 
+    //         //     attr: { d: 'M 0 0 V 100 Q 50 100 100 100 V 0 z' }
+    //         // })
+    //         .fromTo(path2.current, {
+    //             attr: {d: 'M 0 0 V 100 Q 50 100 100 100 V 0 z'}
+    //         }, { 
+    //             duration: 0.3,
+    //             ease: 'power2.in',
+    //             attr: { d: 'M 0 0 V 50 Q 50 0 100 50 V 0 z' }
+    //         });
+    //         setTrans(false)
 
-            }, 1100)
-        }
-        router.events.on('routeChangeStart', animStart)
-        router.events.on('routeChangeComplete', animEnd)
-        router.events.on('routeChangeError', animEnd)
+    //         }, 1100)
+    //     }
+    //     router.events.on('routeChangeStart', animStart)
+    //     router.events.on('routeChangeComplete', animEnd)
+    //     router.events.on('routeChangeError', animEnd)
 
-        return () => {
-            router.events.off('routeChangeStart', animStart)
-            router.events.off('routeChangeComplete', animEnd)
-            router.events.off('routeChangeError', animEnd)
-        }
-    }, [router])
+    //     return () => {
+    //         router.events.off('routeChangeStart', animStart)
+    //         router.events.off('routeChangeComplete', animEnd)
+    //         router.events.off('routeChangeError', animEnd)
+    //     }
+    // }, [router])
 
     const toggle = () => {
         if (!menu) {
