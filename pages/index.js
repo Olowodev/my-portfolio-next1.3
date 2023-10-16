@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import gsap from 'gsap'
 import About from '../components/About'
 import Contact from '../components/Contact'
+import Loading from '../components/Loading'
 import Me from '../components/Me'
 import Work from '../components/Work'
 import styles from '../styles/Home.module.css'
@@ -117,12 +118,12 @@ tl.to(state, {
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Scope+One&display=swap" rel="stylesheet"></link>
       </Head>
-      
+      <Suspense fallback={<Loading />}>
         <Me />
         <About />
         <Work velo={velo} state={state}/>
         <Contact />
-      
+    </Suspense>
 
     </div>
   )
