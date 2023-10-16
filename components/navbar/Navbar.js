@@ -14,6 +14,12 @@ const Navbar = () => {
     const router = useRouter()
     const [trans, setTrans] = useState(false)
 
+    useEffect(() => {
+        router.prefetch('/')
+        router.prefetch('/works')
+        router.prefetch('/contact')
+    }, [router])
+
     // useEffect(() => {
     //     const animStart = async () => {
     //         await setTrans(true)
@@ -77,6 +83,12 @@ const Navbar = () => {
             setClose(true)
         }
     }
+
+    const transition = (link) => {
+        router.push(link)
+        setClose(true)
+    }
+    
     const linkToggle = () => {
         setMenu(!menu)
     }
@@ -186,16 +198,16 @@ useEffect(()=> {
                 </svg>
                 <div className={styles.menuCont}>
                     <div>
-                    <Link href={'/'}><p ref={text} className='menuText'>INDEX</p></Link>
+                    <div onClick={() => transition('/')}><p ref={text} className='menuText'>INDEX</p></div>
                     </div>
                     <div>
-                    <Link href={'/works'}><p className='menuText'>WORKS</p></Link>
+                    <div onClick={() => transition('/works')}><p className='menuText'>WORKS</p></div>
                     </div>
                     <div>
                     <a style={{cursor: 'pointer'}} ref={ref} onClick={downloadPDF}><p className='menuText'>RESUME</p></a>
                     </div>
                     <div>
-                    <Link href={'/contact'}><p className='menuText'>CONTACT</p></Link>
+                    <div onClick={() => transition('/contact')}><p className='menuText'>CONTACT</p></div>
                     </div>
                 </div>
             </div>
