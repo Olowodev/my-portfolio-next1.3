@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import gsap from 'gsap'
 
 
-const Contact = ({path2}) => {
+const Contact = () => {
     const router = useRouter()
 
     const animStart = async () => {
@@ -25,7 +25,7 @@ const Contact = ({path2}) => {
         }
 
     const handleClick = async () => {
-        await animStart()
+        // await animStart()
         router.push('/contact')
     }
     return (
