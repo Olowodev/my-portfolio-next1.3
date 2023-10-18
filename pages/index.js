@@ -12,7 +12,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Home({path2}) {
+export default function Home() {
   const [state, setState] = useState({x: 0})
   const [size, setSize] = useState({x: 0, y: 0})
   const [velo, setVelo] = useState(0)
@@ -122,7 +122,7 @@ tl.to(state, {
         <Me />
         <About />
         <Work velo={velo} state={state}/>
-        <Contact path2={path2} />
+        <Contact />
 
     </div>
   )
