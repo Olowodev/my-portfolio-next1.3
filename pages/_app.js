@@ -1,7 +1,7 @@
 import { Curtains, useCurtains, useCurtainsEvent } from 'react-curtains'
 import Navbar from '../components/navbar/Navbar'
 import '../styles/globals.css'
-import styles from '../components/navbar/Navbar.css'
+import styles from '../components/navbar/navbar.module.css'
 import {useRef} from 'react'
 // import '../components/_barba'
 
