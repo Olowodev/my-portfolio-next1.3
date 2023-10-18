@@ -1,10 +1,12 @@
 import { Curtains, useCurtains, useCurtainsEvent } from 'react-curtains'
 import Navbar from '../components/navbar/Navbar'
 import '../styles/globals.css'
+import styles from '../components/navbar/Navbar.css'
+import {useRef} from 'react'
 // import '../components/_barba'
 
 function MyApp({ Component, pageProps }) {
-
+  const path2 = useRef(null)
   
   const contextLost = (curtains) => {
     console.log('lost')
