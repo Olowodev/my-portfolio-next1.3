@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import gsap from 'gsap'
 
 
-const Contact = () => {
+const Contact = ({path2}) => {
     const router = useRouter()
 
     const animStart = async () => {
