@@ -204,7 +204,7 @@ const Works = () => {
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
                             <a href="https://orpheus-nft-site.netlify.app" target={'_blank'}>
                             <div className={styles.wrapLink}>
-                            <img src="./abstract1.webp" />
+                            <img src="./abstract1.png" />
                             </div>
                             <div className={styles.absolute}>
                                 <p>Orpheus</p>
