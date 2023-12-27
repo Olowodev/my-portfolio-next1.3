@@ -109,6 +109,24 @@
     margin-bottom: 50px;
 }
 
+@media screen and (max-width: 768px) {
+    .tab {
+        width: 60vw;
+    }
+
+    .cell {
+        width: 50%;
+    }
+
+    .cell:nth-child(even) {
+        width: 50%;
+    }
+
+    .cell:nth-child(odd) {
+        width: 50%;
+    }
+}
+
 
 @media screen and (max-width: 500px) {
     .grid {
@@ -139,23 +157,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    .tab {
-        width: 60vw;
-    }
 
-    .cell {
-        width: 50%;
-    }
-
-    .cell:nth-child(even) {
-        width: 50%;
-    }
-
-    .cell:nth-child(odd) {
-        width: 50%;
-    }
-}
 
 .absolute {
     position: absolute;
