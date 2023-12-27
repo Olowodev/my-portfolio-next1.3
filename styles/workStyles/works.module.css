@@ -119,11 +119,11 @@
     }
 
     .cell:nth-child(even) {
-        width: 50%;
+        margin-left: 50%;
     }
 
     .cell:nth-child(odd) {
-        width: 50%;
+        margin-right: 50%;
     }
 }
 
@@ -135,7 +135,7 @@
     }
 
     .cell {
-        width: auto;
+        width: 100;
     }
 
     .wrapLink img {
