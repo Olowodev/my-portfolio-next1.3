@@ -215,7 +215,7 @@ const Works = () => {
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
                             <a href="https://music-olowo.netlify.app" target={'_blank'}>
                             <div className={styles.wrapLink}>
-                            <img src="./abstract2.jpg" />
+                            <img src="./abstract2.png" />
                             </div>
                             <div className={styles.absolute}>
                                 <p>Music App</p>
@@ -226,7 +226,7 @@ const Works = () => {
                         <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
                             <a href="https://gis-vanilla.netlify.app" target={'_blank'}>
                             <div className={styles.wrapLink}>
-                            <img src="./abstract3.jpg" />
+                            <img src="./abstract3.png" />
                             </div>
                             <div className={styles.absolute}>
                                 <p>GIS Web</p>
