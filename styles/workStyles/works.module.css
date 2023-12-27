@@ -18,10 +18,10 @@
 
 .tab {
     display: flex;
-    background-color: #f4f4f5;
-    /* padding: 10px; */
+    background-color: #dddddd;
+    padding: 10px 0;
     border-radius: 50px;
-    width: 40%;
+    width: 40vw;
 }
 
 .tab div {
@@ -97,19 +97,15 @@
 /*     height: 35vw; */
 }
 
-.cell:first-child {
+.cell:nth-child(even) {
+    margin-left: 60%;
+}
+
+.cell:nth-child(odd) {
     margin-right: 60%;
 }
 
-.cell:nth-child(2) {
-    margin-left: 60%;
-}
-
-.cell:nth-child(3) {
-    margin-left: 60%;
-}
-
-.cell:nth-child(4) {
+.cell:last-child {
     margin-bottom: 50px;
 }
 
@@ -128,16 +124,31 @@
 /*         height: 330px; */
     }
 
-    .cell:first-child {
+    .cell {
         margin-right: 0;
-    }
-
-    .cell:nth-child(2) {
         margin-left: 0;
     }
 
-    .cell:nth-child(3) {
-        margin-left: 0;
+    .tab {
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tab {
+        width: 60vw;
+    }
+
+    .cell {
+        width: 50%;
+    }
+
+    .cell:nth-child(even) {
+        width: 50%;
+    }
+
+    .cell:nth-child(odd) {
+        width: 50%;
     }
 }
 
@@ -147,7 +158,7 @@
     left: 5%;
     display: flex;
     background-color: #fff;
-    border-radius: 20px;
+    border-radius: 40px;
     justify-content: center;
     align-items: center;
     color: black;
