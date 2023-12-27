@@ -19,7 +19,7 @@
 .tab {
     display: flex;
     background-color: #dddddd;
-    padding: 10px 0;
+    padding: 2px;
     border-radius: 50px;
     width: 40vw;
 }
@@ -124,7 +124,12 @@
 /*         height: 330px; */
     }
 
-    .cell {
+    .cell:nth-child(even) {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .cell:nth-child(odd) {
         margin-right: 0;
         margin-left: 0;
     }
