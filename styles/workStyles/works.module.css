@@ -6,6 +6,32 @@
     background-color: #ffffff20;
 }
 
+.tabCont {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.tab {
+    display: flex;
+    background-color: #f4f4f5;
+    padding: 10px;
+}
+
+.tab div {
+    color: black;
+    flex: 1;
+    padding: 10px 20px;
+}
+
+.tab div:last-child {
+    background-color: white;
+}
+
 .marquee {
     position: fixed;
     z-index: 1000;
@@ -18,7 +44,7 @@
 
 .marquee_inner {
     display: flex;
-    font-size: 10vw;
+    font-size: 9vw;
     position: relative;
     width: fit-content;
     transform: translateX(0%);

@@ -188,6 +188,16 @@ const Works = () => {
       </Head>
             {/* <Navbar /> */}
             <div style={{ position: 'relative' }}>
+                <div className={styles.tabCont}>
+                    <div className={styles.tab}>
+                        <div>
+                            <p>Websites</p>
+                        </div>
+                        <div>
+                            <p>Mobile Apps</p>
+                        </div>
+                    </div>
+                </div>
                 <div className={styles.marquee}>
                     <div className={styles.marquee_inner} aria-hidden='true'>
                         <span>WORKS</span>
