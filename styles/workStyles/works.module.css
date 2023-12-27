@@ -20,12 +20,14 @@
     display: flex;
     background-color: #f4f4f5;
     padding: 10px;
+    border-radius: 50px;
 }
 
 .tab div {
     color: black;
     flex: 1;
-    padding: 10px 20px;
+    padding: 10px 30px;
+    border-radius: 50px;
 }
 
 .tab div:last-child {
