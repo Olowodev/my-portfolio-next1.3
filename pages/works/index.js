@@ -191,12 +191,17 @@ const Works = () => {
         console.log(router.isReady)
         if (router.isReady) {
             console.log(type)
-            if (!type) {
+            if (!type || (type !== 'apps' && type !== 'websites')) {
                 console.log('bad')
                 params.set('type', 'apps')
                 replace(`${pathname}?${params.toString()}`)
+                // setSelected(type)
+                // console.log(searchParams.get('type'))
+            } else {
+                setSelected(type)
             }
-            setSelected(type)
+            // console.log(type)
+            // setSelected(type)
             setLoading(false)
         }
         // console.log(searchParams.get('type'))
@@ -224,11 +229,11 @@ const Works = () => {
             <div style={{ position: 'relative' }}>
                 <div className={styles.tabCont}>
                     <div className={styles.tab}>
+                    <div className={selected == 'apps' ? styles.selected : null} onClick={() => changeSearchParam('apps')}>
+                            <p>Mobile Apps</p>
+                        </div>
                         <div className={selected == 'websites' ? styles.selected : null} onClick={() => changeSearchParam('websites')}>
                             <p>Websites</p>
-                        </div>
-                        <div className={selected == 'apps' ? styles.selected : null} onClick={() => changeSearchParam('apps')}>
-                            <p>Mobile Apps</p>
                         </div>
                     </div>
                 </div>
