@@ -32,7 +32,7 @@ const Wave = () => {
     //     console.log(pointer)
     // }
 
-    const [image] = useLoader(TextureLoader, ['me.jpg'])
+    const [image] = useLoader(TextureLoader, ['me.webp'])
     return (
         <mesh position={new Vector3(0, -0.05, 0)} ref={meshRef}>
             <planeGeometry args={[0.4, 0.4, 16, 16]} />
@@ -45,7 +45,7 @@ const Me = () => {
 
     const getInnerWidth = () => {
         setInnerWidth(window.innerWidth)
-        console.log(innerWidth)
+        // console.log(innerWidth)
     }
 
     useEffect(() => {
@@ -69,7 +69,7 @@ const Me = () => {
                     </div>
                     { innerWidth <= 500 ?
                     <div>
-                        <img style={{width: '100%'}} src='me.jpg' />
+                        <img style={{width: '100%'}} src='me.webp' />
                     </div>
                     : null
                     }

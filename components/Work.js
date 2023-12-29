@@ -39,7 +39,7 @@ const HTML = ({hovered, textRef, title}) => {
                     onExit={node => {animateOut(node)}}
                     unmountOnExit
                     mountOnEnter
-                    timeout={500}
+                    timeout={100}
                 >
             <p ref={textRef} id='workName' style={{fontFamily: 'dharma M', fontSize: '10vw', mixBlendMode: 'difference', color: 'rgba(255, 255, 255, 0.9)', letterSpacing: '5px'}}>{title}</p>
             </Transition>

@@ -1,5 +1,8 @@
+"use client"
+
 import { Html, shaderMaterial } from "@react-three/drei";
 import { Canvas, extend, useFrame, useLoader, useThree } from "@react-three/fiber";
+import { useSearchParams, usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
@@ -18,7 +21,7 @@ import vertex2 from "raw-loader!glslify-loader!../../shaders/vertex2.vert"
 import { Curtains, useCurtainsEvent } from "react-curtains";
 import Head from "next/head";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import {AiOutlineLink} from 'react-icons/ai'
+import { AiOutlineLink } from 'react-icons/ai'
 
 
 
@@ -28,18 +31,18 @@ const MyShaderMaterial = shaderMaterial(
     fragment
 )
 
-extend({MyShaderMaterial})
+extend({ MyShaderMaterial })
 
 
 const Wave = () => {
     const ref = useRef()
-    useFrame(({clock}) => (ref.current.uTime = clock.getElapsedTime()))
+    useFrame(({ clock }) => (ref.current.uTime = clock.getElapsedTime()))
 
     const [image] = useLoader(TextureLoader, ['test.webp'])
     return (
         <mesh>
             <planeGeometry args={[0.4, 0.4, 16, 16]} />
-            <myShaderMaterial  ref={ref} uTexture={image}/>
+            <myShaderMaterial ref={ref} uTexture={image} />
         </mesh>
     )
 }
@@ -91,23 +94,23 @@ const Picture01 = ({ velo, cover, index, state, title }) => {
     const ref2 = useRef()
     const [hovered, setHovered] = useState(false)
     const router = useRouter()
-    const {gl} = useThree()
+    const { gl } = useThree()
     useEffect(() => {
         // gl.domElement.addEventListener('webglcontextloss', ()=>{
         //     console.log('testing')
         //     gl.forceContextRestore()
         // })
-    //     console.log(gl.getContext())
-    //     setTimeout(()=> {
-    //         gl.forceContextRestore()
+        //     console.log(gl.getContext())
+        //     setTimeout(()=> {
+        //         gl.forceContextRestore()
 
-    //     console.log('restored2')
-    // }, 1000)
+        //     console.log('restored2')
+        // }, 1000)
 
-    return ()=> {
-        gl.forceContextLoss()
-    }
-        
+        return () => {
+            gl.forceContextLoss()
+        }
+
     }, [])
 
     const onImageClick = () => {
@@ -174,26 +177,57 @@ const Picture01 = ({ velo, cover, index, state, title }) => {
 
 const Works = () => {
     const [hover, setHover] = useState(false)
-    
+    const searchParams = useSearchParams()
+    const type = searchParams.get('type')
+    const params = new URLSearchParams(searchParams)
+    const { replace } = useRouter()
+    const router = useRouter()
+    const pathname = usePathname()
+    const [selected, setSelected] = useState('apps')
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        setLoading(true)
+        console.log(router.isReady)
+        if (router.isReady) {
+            console.log(type)
+            setSelected(type)
+            if (!type) {
+                console.log('bad')
+                params.set('type', 'apps')
+                replace(`${pathname}?${params.toString()}`)
+            }
+            setLoading(false)
+        }
+        // console.log(searchParams.get('type'))
+    }, [router.isReady])
+
+    // console.log(type)
+
+    const changeSearchParam = (param) => {
+        setSelected(param)
+        params.set('type', param)
+        replace(`${pathname}?${params.toString()}`)
+    }
 
     return (
         <div className={`${styles.works} works ${hover ? styles.bgHover : null}`}>
             <Head>
-        <title>Adebayo Olowofoyeku</title>
-        <meta name="description" content="Adebayo Olowofoyeku's portfolio. A full stack developer" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Scope+One&display=swap" rel="stylesheet"></link>
-      </Head>
+                <title>Adebayo Olowofoyeku</title>
+                <meta name="description" content="Adebayo Olowofoyeku's portfolio. A full stack developer" />
+                <link rel="icon" href="/favicon.ico" />
+                <link rel='preconnect' href='https://fonts.googleapis.com' />
+                <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+                <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Scope+One&display=swap" rel="stylesheet"></link>
+            </Head>
             {/* <Navbar /> */}
             <div style={{ position: 'relative' }}>
                 <div className={styles.tabCont}>
                     <div className={styles.tab}>
-                        <div>
+                        <div className={selected == 'websites' ? styles.selected : null} onClick={() => changeSearchParam('websites')}>
                             <p>Websites</p>
                         </div>
-                        <div>
+                        <div className={selected == 'apps' ? styles.selected : null} onClick={() => changeSearchParam('apps')}>
                             <p>Mobile Apps</p>
                         </div>
                     </div>
@@ -209,42 +243,83 @@ const Works = () => {
                     </div>
 
                 </div>
+                {/* {!loading ? */}
+                <>
                 <div className={styles.gridWrapper}>
                     <div className={styles.grid}>
-                        <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
-                            <a href="https://orpheus-nft-site.netlify.app" target={'_blank'}>
-                            <div className={styles.wrapLink}>
-                            <img src="./abstract1.png" />
-                            </div>
-                            <div className={styles.absolute}>
-                                <p>Orpheus</p>
-                                <AiOutlineLink />
-                            </div>
+                        {searchParams.get('type') == 'websites' ? 
+                        <>
+                        <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={styles.cell}>
+                            <a href="https://shuttl.app" target={'_blank'}>
+                                <div className={styles.wrapLink}>
+                                    <img src="./shuttl.png" />
+                                </div>
+                                <div className={styles.absolute}>
+                                    <p>Shuttl</p>
+                                    <AiOutlineLink />
+                                </div>
                             </a>
                         </div>
-                        <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
-                            <a href="https://music-olowo.netlify.app" target={'_blank'}>
-                            <div className={styles.wrapLink}>
-                            <img src="./abstract2.png" />
-                            </div>
-                            <div className={styles.absolute}>
-                                <p>Music App</p>
-                                <AiOutlineLink />
-                            </div>
+                        <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={styles.cell}>
+                            <a href="https://kyra.netlify.app" target={'_blank'}>
+                                <div className={styles.wrapLink}>
+                                    <img src="./kyra.png" />
+                                </div>
+                                <div className={styles.absolute}>
+                                    <p>Kyra</p>
+                                    <AiOutlineLink />
+                                </div>
                             </a>
                         </div>
-                        <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
-                            <a href="https://gis-vanilla.netlify.app" target={'_blank'}>
-                            <div className={styles.wrapLink}>
-                            <img src="./abstract3.png" />
-                            </div>
-                            <div className={styles.absolute}>
-                                <p>GIS Web</p>
-                                <AiOutlineLink />
-                            </div>
+                        </>
+                        : 
+                        <></>
+                        }
+                        <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={styles.cell}>
+                            <a href={searchParams.get('type') == 'websites' ? "https://orpheus-nft-site.netlify.app" : "https://github.com/Olowodev/car-app"} target={'_blank'}>
+                                <div className={styles.wrapLink}>
+                                    <img src={searchParams.get('type') == 'websites' ? "./orpheus.png" : "./abstract1.png"} />
+                                </div>
+                                <div className={styles.absolute}>
+                                    {searchParams.get('type') == 'websites' ? <p>Orpheus</p> : <p>Cars</p>}
+                                    <AiOutlineLink />
+                                </div>
                             </a>
                         </div>
-                        <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
+                        <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={styles.cell}>
+                            <a href={searchParams.get('type') == 'websites' ? "https://music-olowo.netlify.app" : "https://github.com/Olowodev/nft-wallet"} target={'_blank'}>
+                                <div className={styles.wrapLink}>
+                                    <img src={searchParams.get('type') == 'websites' ? "./music.png" : "./abstract2.png"} />
+                                </div>
+                                <div className={styles.absolute}>
+                                    {searchParams.get('type') == 'websites' ? <p>Music App</p> : <p>NFT Wallet</p>}
+                                    <AiOutlineLink />
+                                </div>
+                            </a>
+                        </div>
+                        <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={styles.cell}>
+                            <a href={searchParams.get('type') == 'websites' ? "https://gis-vanilla.netlify.app" : "https://github.com/Olowodev/shoe-ecommerce"} target={'_blank'}>
+                                <div className={styles.wrapLink}>
+                                    <img src={searchParams.get('type') == 'websites' ? "./gis.png" : "./abstract3.png"} />
+                                </div>
+                                <div className={styles.absolute}>
+                                    {searchParams.get('type') == 'websites' ? <p>GIS Web</p> : <p>ShoeComm</p>}
+                                    <AiOutlineLink />
+                                </div>
+                            </a>
+                        </div>
+                        <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={styles.cell}>
+                            <a href={searchParams.get('type') == 'websites' ? "https://github.com/Olowodev/trinac-victor-twitter" : "https://github.com/Olowodev/mume"} target={'_blank'}>
+                                <div className={styles.wrapLink}>
+                                    <img src={searchParams.get('type') == 'websites' ? "./trinac.png" : "./mume.png"} />
+                                </div>
+                                <div className={styles.absolute}>
+                                    {searchParams.get('type') == 'websites' ? <p>Trinac</p> : <p>Mume</p>}
+                                    <AiOutlineLink />
+                                </div>
+                            </a>
+                        </div>
+                        {/* <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className={styles.cell}>
                             <a href="https://thedecalmasters.com" target={'_blank'}>
                             <div className={styles.wrapLink}>
                             <img src="./abstract4.jpg" />
@@ -254,12 +329,18 @@ const Works = () => {
                                 <AiOutlineLink />
                             </div>
                             </a>
-                        </div>
+                        </div> */}
+                        {/* <div></div>
                         <div></div>
-                        <div></div>
-                        <div></div>
+                        <div></div> */}
                     </div>
                 </div>
+                </>
+                 {/* :
+                 <div style={{position: 'absolute', top: '50%', left: '50%', transform: {translate: '-50% -50%'}}}>
+                     <div className={styles.ldsRing}><div></div><div></div><div></div><div></div></div>
+                </div> */}
+                {/* // } */}
                 {/* <Plane vertexShader={slideVertex} fragmentShader={slideFragment} className="BasicPlane">
                         <img className="img" src="/abstract2.jpg" />
                     </Plane> */}
@@ -326,10 +407,10 @@ const Works = () => {
                         </div>
                     </div> */}
 
-                    {/* <div className={styles.box}>
+                {/* <div className={styles.box}>
 
                 </div> */}
-                    {/* <Canvas camera={{fov: 8, position: [0, 0, 10]}} style={{position: 'absolute', left: 0, top: 0, zIndex: 200}}>
+                {/* <Canvas camera={{fov: 8, position: [0, 0, 10]}} style={{position: 'absolute', left: 0, top: 0, zIndex: 200}}>
                 
                 <Suspense fallback={null}>
                 {workGallery.map((slide, index) => (
@@ -337,15 +418,15 @@ const Works = () => {
                     ))}
                 </Suspense>
             </Canvas> */}
-            {/* <Canvas camera={{fov: 8, position: [0, 0, 5]}} style={{position: 'absolute', left: 0, top: 0, zIndex: 100}}>
+                {/* <Canvas camera={{fov: 8, position: [0, 0, 5]}} style={{position: 'absolute', left: 0, top: 0, zIndex: 100}}>
                 
                 <Suspense fallback={null}>
                     <Wave />
                 </Suspense>
             </Canvas> */}
-                </div>
             </div>
-            );
+        </div>
+    );
 }
 
-            export default Works;
+export default Works;

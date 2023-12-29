@@ -2,6 +2,43 @@
     /* background-color: #ffffff30; */
 }
 
+.ldsRing {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .ldsRing div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .ldsRing div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .ldsRing div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .ldsRing div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
 .bgHover {
     background-color: #ffffff20;
 }
@@ -18,24 +55,33 @@
 
 .tab {
     display: flex;
-    background-color: #dddddd;
+    /* background-color: #dddddd; */
     padding: 2px;
     border-radius: 50px;
     width: 40vw;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.17);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .tab div {
-    color: black;
+    color: white;
     flex: 1;
     padding: 10px 30px;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
-.tab div:last-child {
+.tab .selected {
     background-color: white;
+    color: #000;
 }
 
 .marquee {
@@ -106,7 +152,7 @@
 }
 
 .cell:last-child {
-    margin-bottom: 50px;
+    margin-bottom: 66px;
 }
 
 @media screen and (max-width: 768px) {

@@ -25,27 +25,27 @@ export const workSlideShow = [
     // },
     {
         id: 5,
-        cover: 'abstract1.webp',
-        title: 'ORPHEUS',
-        link: 'https://orpheus-nft-site.netlify.app'
+        cover: 'kyra.png',
+        title: 'KYRA',
+        link: 'https://kyra.netlify.app'
     },
     {
         id: 6,
-        cover: 'abstract2.jpg',
+        cover: 'music.png',
         title: 'MUSIC PLAYER',
         link: 'https://music-olowo.netlify.app'
     },
     {
         id: 7,
-        cover: 'abstract3.jpg',
-        title: 'GIS 3D APP',
-        link: 'https://gis-vanilla.netlify.app'
+        cover: 'shuttl.png',
+        title: 'SHUTTL',
+        link: 'https://shuttl.app'
     },
     {
         id: 8,
-        cover: 'abstract4.jpg',
-        title: 'DECAL',
-        link: 'https://thedecalmasters.com'
+        cover: 'orpheus.png',
+        title: 'ORPHEUS',
+        link: 'https://orpheus-nft-site.netlify.app'
     },
 ]
 
