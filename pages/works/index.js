@@ -191,12 +191,12 @@ const Works = () => {
         console.log(router.isReady)
         if (router.isReady) {
             console.log(type)
-            setSelected(type)
             if (!type) {
                 console.log('bad')
                 params.set('type', 'apps')
                 replace(`${pathname}?${params.toString()}`)
             }
+            setSelected(type)
             setLoading(false)
         }
         // console.log(searchParams.get('type'))
